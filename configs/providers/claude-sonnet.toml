@@ -1,5 +1,4 @@
 # Official API endpoint. Credentials are read from the environment.
-# Explicit model from the saved claude-sonnet configuration; override --model for another study version.
 [model]
 provider = "anthropic"
 model = "claude-sonnet-5"
