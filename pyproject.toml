@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-sec-lab"
+version = "0.1.0"
+description = "Reproducible harness for multi-skill agent security research"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6.0"]
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-subtests"]
+
+[project.scripts]
+agent-sec-lab = "agent_sec_lab.cli:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["agent_sec_lab*"]
+
+[tool.setuptools.package-data]
+agent_sec_lab = [
+  "skillsbench_chain/execution/resources/*.sh",
+  "skillsbench_chain/prompts/*.j2",
+  "skillsbench_chain/prompts/*.md.j2",
+  "skillsbench_chain/references/*.md",
+  "skillsbench_chain/surface_contract_packs/*/SKILL.md",
+  "skillsbench_chain/surface_contract_packs/*/agents/*.yaml",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
