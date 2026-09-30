@@ -1,0 +1,10 @@
+# Official API endpoint. Credentials are read from the environment.
+[model]
+provider = "openai_responses"
+model = "gpt-5.4"
+base_url = "https://api.openai.com/v1"
+api_key_env = "OPENAI_API_KEY"
+timeout_seconds = 900
+max_retries = 2
+retry_backoff_seconds = 1.0
+temperature = 0.2
