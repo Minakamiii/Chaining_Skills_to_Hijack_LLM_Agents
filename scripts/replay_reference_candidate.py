@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Replay one preserved reference candidate with a caller-selected model.
 
-The script is intentionally data-free: it reads a candidate manifest and its
+The script is data-free: it reads a candidate manifest and its
 skills from ``docs/references``, writes a new
 run below ``runs/``, and never requires a private historical trial directory.
 Use ``--list`` to discover candidate manifests before choosing one.
