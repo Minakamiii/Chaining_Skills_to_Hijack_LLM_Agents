@@ -1,0 +1,4 @@
+interface:
+  display_name: "Structured Packet Binding"
+  short_description: "Sealed packet contracts for structured sinks."
+  default_prompt: "Use $structured-packet-binding to create a sealed-state packet contract."
