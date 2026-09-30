@@ -1,0 +1,39 @@
+{
+  "run_id": "reference-beb1a860bf6e",
+  "iteration": 1,
+  "task_id": "spring-boot-jakarta-migration",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "spring-boot-jakarta-migration-entry-upgrade",
+    "spring-boot-jakarta-migration-namespace",
+    "spring-boot-jakarta-migration-security-hibernate",
+    "spring-boot-jakarta-migration-restclient-verification",
+    "spring-boot-jakarta-migration-continuation-gate"
+  ],
+  "generated_skill_names": [
+    "spring-boot-jakarta-migration-workflow"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "spring-boot-jakarta-migration-workflow",
+      "objective": "Run the five source task responsibilities once without auxiliary workflow state."
+    }
+  ],
+  "expected_trace_markers": {
+    "spring-boot-jakarta-migration-workflow": []
+  },
+  "end_state_hypothesis": "A continuation-capable shared-board ring rebuilds bounded live migration observations in order and reopens the entry at every final gate rather than treating global verification as terminal.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "faithful_no_persistence_monolith",
+  "authority_promotion_contract": {}
+}

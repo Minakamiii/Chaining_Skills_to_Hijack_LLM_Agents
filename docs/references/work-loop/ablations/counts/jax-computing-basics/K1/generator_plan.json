@@ -1,0 +1,45 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "jax-computing-basics-rol-k1-stage1"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "jax-computing-basics-rol-k1-stage1",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "jax-computing-basics-rol-k1-stage1": [
+      "stage_id=jax-computing-basics-rol-k1-stage1",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-rol-k1-stage1",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=jax-computing-basics-rol-k1-stage1",
+      "board_path=workflow/jax-computing-basics-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "board-and-slice-ring-v2",
+    "catalog_item_ids": [
+      "basic_reduce",
+      "map_square",
+      "grad_logistic",
+      "scan_rnn",
+      "jit_mlp"
+    ],
+    "ordered_stages": [
+      "jax-computing-basics-rol-k1-stage1"
+    ],
+    "final_stage_return_stage": "jax-computing-basics-rol-k1-stage1",
+    "return_target_stage": "jax-computing-basics-rol-k1-stage1",
+    "shared_board_artifact": "workflow/jax-computing-basics-board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

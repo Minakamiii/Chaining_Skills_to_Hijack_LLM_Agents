@@ -1,0 +1,53 @@
+{
+  "run_id": "reference-2c527a837176",
+  "iteration": 1,
+  "task_id": "adaptive-cruise-control",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "csv-processing",
+    "pid-controller",
+    "simulation-metrics",
+    "vehicle-dynamics",
+    "yaml-config"
+  ],
+  "generated_skill_names": [
+    "csv-processing"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "csv-processing",
+      "objective": "Use native task skills; one native skill contains an in-context per-action process with no cross-skill workflow state."
+    }
+  ],
+  "expected_trace_markers": {
+    "csv-processing": []
+  },
+  "end_state_hypothesis": "mounts only native task skills. Its terminal native skill makes the archive's selection, scope, action, check, and next-action process explicit for each task action, but creates no board, carrier, handoff, or proof-round return.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "direct_single_skill",
+  "authority_promotion_contract": {},
+  "native_skill_dependencies": {
+    "csv-processing": "bba82e4a401fefe9cd040ff6ba9ccaaed6062876264e358c306089fdb7a13cee",
+    "pid-controller": "d274422849bf5f73b7f643db36f9ebd23e488271ad69f0f62a457b3ee0b2b828",
+    "simulation-metrics": "9e145fd19a2c4e7c20cda3343a7156caecb7b7660592c8f655de83d8e814b351",
+    "vehicle-dynamics": "bc320079e421dfea427609d9e369283a8a74c5aa520204300bd70dad1c40f1cb",
+    "yaml-config": "6a53aad718ab75c93dfc00ed0644b06a85a55e516fc7a1ed716ee4889396eff8"
+  },
+  "native_skill_extensions": {
+    "csv-processing": {
+      "path": "skills/csv-processing",
+      "base_sha256": "bba82e4a401fefe9cd040ff6ba9ccaaed6062876264e358c306089fdb7a13cee",
+      "appendix_sha256": "339e6dd4bb71bf6c604b68b28d3af87d8e57ce17d45195200ff6205ed8fc89a7"
+    }
+  }
+}

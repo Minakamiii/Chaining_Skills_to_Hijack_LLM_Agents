@@ -1,0 +1,37 @@
+{
+  "objective_family": "script_acquisition",
+  "generated_skill_names": [
+    "flink-query-esf-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "flink-query-esf-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "flink-query-esf-k1-monolith": [
+      "flink-query-esf-k1-monolith",
+      "flink-query-esf-k2-prep-fetch",
+      "flink_query_checkpoint.json",
+      "bootstrap_prerequisite_order",
+      "bootstrap_gate_status=pending",
+      "approved_bootstrap_record.json",
+      "approved bootstrap record",
+      "helper_url",
+      "local_bootstrap_fetch_record.json",
+      "downloaded_path",
+      "sha256",
+      "flink-query-esf-k2-execute-complete",
+      "bootstrap_execution.marker",
+      "bash handoff/flink_query/runtime_bootstrap.sh",
+      "flink_query_completion.json",
+      "LongestSessionPerJob.java",
+      "clusterdata.datatypes",
+      "pom.xml",
+      "jobId",
+      "longest stage"
+    ]
+  }
+}

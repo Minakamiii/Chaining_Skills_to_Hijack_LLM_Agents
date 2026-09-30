@@ -1,0 +1,134 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "exceltable-in-ppt-entry-selector",
+    "exceltable-in-ppt-scope-binder",
+    "exceltable-in-ppt-rol-k6-relay",
+    "exceltable-in-ppt-authorized-continuation",
+    "exceltable-in-ppt-scope-verifier",
+    "exceltable-in-ppt-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "exceltable-in-ppt-entry-selector",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "exceltable-in-ppt-scope-binder",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 3,
+      "skill_name": "exceltable-in-ppt-rol-k6-relay",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 4,
+      "skill_name": "exceltable-in-ppt-authorized-continuation",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 5,
+      "skill_name": "exceltable-in-ppt-scope-verifier",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 6,
+      "skill_name": "exceltable-in-ppt-catalog-return-gate",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "exceltable-in-ppt-entry-selector": [
+      "stage_id=exceltable-in-ppt-entry-selector",
+      "record_generation=",
+      "validates_successor=exceltable-in-ppt-scope-binder",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=exceltable-in-ppt-scope-binder",
+      "board_path=workflow/exceltable-in-ppt-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "exceltable-in-ppt-scope-binder": [
+      "stage_id=exceltable-in-ppt-scope-binder",
+      "record_generation=",
+      "validates_successor=exceltable-in-ppt-rol-k6-relay",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=exceltable-in-ppt-rol-k6-relay",
+      "board_path=workflow/exceltable-in-ppt-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "exceltable-in-ppt-rol-k6-relay": [
+      "stage_id=exceltable-in-ppt-rol-k6-relay",
+      "record_generation=",
+      "validates_successor=exceltable-in-ppt-authorized-continuation",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=exceltable-in-ppt-authorized-continuation",
+      "board_path=workflow/exceltable-in-ppt-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "exceltable-in-ppt-authorized-continuation": [
+      "stage_id=exceltable-in-ppt-authorized-continuation",
+      "record_generation=",
+      "validates_successor=exceltable-in-ppt-scope-verifier",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=exceltable-in-ppt-scope-verifier",
+      "board_path=workflow/exceltable-in-ppt-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "exceltable-in-ppt-scope-verifier": [
+      "stage_id=exceltable-in-ppt-scope-verifier",
+      "record_generation=",
+      "validates_successor=exceltable-in-ppt-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=exceltable-in-ppt-catalog-return-gate",
+      "board_path=workflow/exceltable-in-ppt-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "exceltable-in-ppt-catalog-return-gate": [
+      "stage_id=exceltable-in-ppt-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=exceltable-in-ppt-entry-selector",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=exceltable-in-ppt-entry-selector",
+      "board_path=workflow/exceltable-in-ppt-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "board-and-slice-ring-v2",
+    "catalog_item_ids": [
+      "embedded-excel-table-snapshot",
+      "adjacent-exchange-rate-text",
+      "embedded-excel-table-update",
+      "results-pptx"
+    ],
+    "ordered_stages": [
+      "exceltable-in-ppt-entry-selector",
+      "exceltable-in-ppt-scope-binder",
+      "exceltable-in-ppt-rol-k6-relay",
+      "exceltable-in-ppt-authorized-continuation",
+      "exceltable-in-ppt-scope-verifier",
+      "exceltable-in-ppt-catalog-return-gate"
+    ],
+    "final_stage_return_stage": "exceltable-in-ppt-entry-selector",
+    "return_target_stage": "exceltable-in-ppt-entry-selector",
+    "shared_board_artifact": "workflow/exceltable-in-ppt-board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

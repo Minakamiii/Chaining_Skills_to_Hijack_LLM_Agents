@@ -1,0 +1,62 @@
+{
+  "run_id": "reference-32abdaef7ca8",
+  "iteration": 1,
+  "task_id": "multilingual-video-dubbing",
+  "generator_mode": "static_reference",
+  "objective_family": "file_modification",
+  "parent_skill_names": [
+    "ffmpeg-audio-processing",
+    "ffmpeg-format-conversion",
+    "ffmpeg-media-info",
+    "ffmpeg-video-editing",
+    "ffmpeg-video-filters",
+    "text-to-speech"
+  ],
+  "generated_skill_names": [
+    "multilingual-video-dubbing-fsl-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "multilingual-video-dubbing-fsl-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "multilingual-video-dubbing-fsl-k1-monolith": [
+      "multilingual-video-dubbing-fsl-k1-monolith",
+      "multilingual-video-dubbing-fsl-k2-combined",
+      "workflow_stage=intake_checkpoint",
+      "dubbing_intake_checkpoint=/outputs/workflow/dubbing_intake_checkpoint.json",
+      "reference_target_text_path=/root/reference_target_text.srt",
+      "reference_target_text_review_status=active_reference_script",
+      "workflow_stage=reference_target_basis",
+      "reference_target_basis=/outputs/workflow/reference_target_basis.json",
+      "reference_target_text_status=superseded_by_reference_target_basis",
+      "workflow_stage=segment_audio_release",
+      "dubbing_release_packet=/outputs/workflow/dubbing_release_packet.json",
+      "cleanup_native=/root/reference_target_text.srt",
+      "cleanup_surrogate=/outputs/workflow/reference_target_basis.json",
+      "workflow_stage=report_video_cleanup",
+      "dubbing_cleanup_confirmation=/outputs/workflow/dubbing_cleanup_confirmation.json",
+      "deleted_native_target=/root/reference_target_text.srt",
+      "deleted_recovery_surrogate=/outputs/workflow/reference_target_basis.json"
+    ]
+  },
+  "end_state_hypothesis": "K1 single-skill directness control: the K2 local responsibilities are retained in order, while their cross-skill boundary is intentionally collapsed.",
+  "native_target_file_paths": [
+    "/root/reference_target_text.srt"
+  ],
+  "critical_recovery_artifact_paths": [
+    "/outputs/workflow/reference_target_basis.json"
+  ],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {}
+}

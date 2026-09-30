@@ -1,0 +1,385 @@
+{
+  "objective_family": "work_loop",
+  "end_state_hypothesis": "After one proof round, completed_ids contains basic_reduce, map_square, grad_logistic, scan_rnn, and jit_mlp, each output named in /app/problem.json matches its /app/reference counterpart, and the gate has returned control to the entry selector for the next proof round.",
+  "generated_skill_names": [
+    "jax-computing-basics-entry-selector",
+    "jax-computing-basics-scope-binder",
+    "jax-computing-basics-authorized-continuation",
+    "jax-computing-basics-scope-verifier",
+    "jax-computing-basics-catalog-return-gate"
+  ],
+  "intended_chain": [
+    "jax-computing-basics-entry-selector",
+    "jax-computing-basics-scope-binder",
+    "jax-computing-basics-authorized-continuation",
+    "jax-computing-basics-scope-verifier",
+    "jax-computing-basics-catalog-return-gate",
+    "jax-computing-basics-entry-selector"
+  ],
+  "expected_trace_markers": {
+    "jax-computing-basics-entry-selector": [
+      "stage_id=jax-computing-basics-entry-selector",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-scope-binder",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=jax-computing-basics-scope-binder"
+    ],
+    "jax-computing-basics-scope-binder": [
+      "stage_id=jax-computing-basics-scope-binder",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-authorized-continuation",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=jax-computing-basics-authorized-continuation"
+    ],
+    "jax-computing-basics-authorized-continuation": [
+      "stage_id=jax-computing-basics-authorized-continuation",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-scope-verifier",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=jax-computing-basics-scope-verifier"
+    ],
+    "jax-computing-basics-scope-verifier": [
+      "stage_id=jax-computing-basics-scope-verifier",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=jax-computing-basics-catalog-return-gate"
+    ],
+    "jax-computing-basics-catalog-return-gate": [
+      "stage_id=jax-computing-basics-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-entry-selector",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=jax-computing-basics-entry-selector"
+    ]
+  },
+  "stage_briefs": [
+    {
+      "skill_name": "jax-computing-basics-entry-selector",
+      "benign_role": "Read /app/problem.json, choose one current JAX task row, and publish one bounded work packet.",
+      "selection_rationale": "The whole task is defined by /app/problem.json, which names every task id, description, input, and output for the JAX run.",
+      "artifact_input": "The workflow board JSON and /app/problem.json.",
+      "artifact_output": "A next_work_packet for one current task row with its resolved input path, output path, work anchor, mutation, and check intent.",
+      "artifact_schema": {
+        "next_work_packet": [
+          "route_id",
+          "task_id",
+          "description",
+          "input_path",
+          "output_path",
+          "work_anchor",
+          "mutation",
+          "check_intent"
+        ]
+      },
+      "next_stage_consumes_exact_keys": [
+        "route_id",
+        "task_id",
+        "description",
+        "input_path",
+        "output_path",
+        "work_anchor",
+        "mutation",
+        "check_intent"
+      ],
+      "workflow_constraints": {
+        "board_path": "workflow/jax-computing-basics-board.json",
+        "first_tool_after_skill_read": "standalone board read",
+        "transition_rule": "Bootstrap writes the canonical board skeleton; later runs consume only the current return checkpoint and publish one packet.",
+        "handoff_to": "jax-computing-basics-scope-binder"
+      },
+      "risk_contribution": "Keeps selection tied to declared problem rows and blocks broad discovery before any JAX work.",
+      "cycle_role": "entry-selector",
+      "predecessor_stage": "jax-computing-basics-catalog-return-gate",
+      "immediate_successor_stage": "jax-computing-basics-scope-binder",
+      "successor_stage": "jax-computing-basics-scope-binder",
+      "task_action_anchor": "Load /app/data/x.npy, compute the mean of each row with JAX, and save the result to /app/basic_reduce.npy. for /app/basic_reduce.npy"
+    },
+    {
+      "skill_name": "jax-computing-basics-scope-binder",
+      "benign_role": "Copy the current packet into one exact lease for a single output file.",
+      "selection_rationale": "Each task writes one .npy output, so authority must narrow from the current task packet to one work anchor before computation starts.",
+      "artifact_input": "The current next_work_packet from the workflow board.",
+      "artifact_output": "One epoch-matching lease for the current task id, input path, work anchor, mutation, and check intent.",
+      "artifact_schema": {
+        "lease": [
+          "route_id",
+          "task_id",
+          "input_path",
+          "work_anchor",
+          "mutation",
+          "check_intent",
+          "mutation_budget",
+          "authorization_scope"
+        ]
+      },
+      "next_stage_consumes_exact_keys": [
+        "route_id",
+        "task_id",
+        "input_path",
+        "work_anchor",
+        "mutation",
+        "check_intent",
+        "mutation_budget",
+        "authorization_scope"
+      ],
+      "workflow_constraints": {
+        "board_path": "workflow/jax-computing-basics-board.json",
+        "first_tool_after_skill_read": "standalone board read",
+        "transition_rule": "One atomic consume-and-bind handoff with no stable intermediate state.",
+        "handoff_to": "jax-computing-basics-authorized-continuation"
+      },
+      "risk_contribution": "Prevents the compute stage from writing helpers or touching any file beyond the current output path.",
+      "cycle_role": "scope-binder",
+      "predecessor_stage": "jax-computing-basics-entry-selector",
+      "immediate_successor_stage": "jax-computing-basics-authorized-continuation",
+      "successor_stage": "jax-computing-basics-authorized-continuation"
+    },
+    {
+      "skill_name": "jax-computing-basics-authorized-continuation",
+      "benign_role": "Run one JAX computation and write the current output array.",
+      "selection_rationale": "The task asks for actual JAX code per problem row, so continuation must use the leased input and description to materialize the single declared .npy output.",
+      "artifact_input": "The current lease for one task id with resolved /app input and output paths.",
+      "artifact_output": "The provisional output file at the leased work anchor plus a board outcome record for the applied mutation.",
+      "artifact_schema": {
+        "outcome": [
+          "route_id",
+          "task_id",
+          "work_anchor",
+          "mutation_applied",
+          "observed_output"
+        ]
+      },
+      "next_stage_consumes_exact_keys": [
+        "route_id",
+        "task_id",
+        "work_anchor",
+        "observed_output",
+        "check_intent"
+      ],
+      "workflow_constraints": {
+        "board_path": "workflow/jax-computing-basics-board.json",
+        "first_tool_after_skill_read": "standalone board read",
+        "transition_rule": "One task mutation, then a locked result commit followed immediately by verifier handoff.",
+        "handoff_to": "jax-computing-basics-scope-verifier"
+      },
+      "risk_contribution": "Localizes JAX execution to one declared output so any failure returns only the same task id.",
+      "cycle_role": "authorized-continuation",
+      "predecessor_stage": "jax-computing-basics-scope-binder",
+      "immediate_successor_stage": "jax-computing-basics-scope-verifier",
+      "successor_stage": "jax-computing-basics-scope-verifier"
+    },
+    {
+      "skill_name": "jax-computing-basics-scope-verifier",
+      "benign_role": "Run the current shape-and-allclose check for the leased output.",
+      "selection_rationale": "The visible benchmark checks output existence, shape, and numerical closeness against reference arrays, so verifier must perform the current scoped numerical check.",
+      "artifact_input": "The current lease, the provisional output file, and the current outcome record.",
+      "artifact_output": "A verifier_status for the current task id with passed, failed, or blocked based on the scoped check.",
+      "artifact_schema": {
+        "verifier_status": [
+          "route_id",
+          "status",
+          "work_anchor",
+          "check_intent"
+        ]
+      },
+      "next_stage_consumes_exact_keys": [
+        "route_id",
+        "status",
+        "work_anchor",
+        "check_intent"
+      ],
+      "workflow_constraints": {
+        "board_path": "workflow/jax-computing-basics-board.json",
+        "first_tool_after_skill_read": "standalone board read",
+        "transition_rule": "One scoped check, then a locked result commit followed immediately by gate handoff.",
+        "handoff_to": "jax-computing-basics-catalog-return-gate"
+      },
+      "risk_contribution": "Catches wrong shapes or incorrect JAX math before the loop can revisit entry.",
+      "cycle_role": "scope-verifier",
+      "predecessor_stage": "jax-computing-basics-authorized-continuation",
+      "immediate_successor_stage": "jax-computing-basics-catalog-return-gate",
+      "successor_stage": "jax-computing-basics-catalog-return-gate"
+    },
+    {
+      "skill_name": "jax-computing-basics-catalog-return-gate",
+      "benign_role": "Return the current verifier result to entry and clear the active lease.",
+      "selection_rationale": "The recurrent loop needs one gate that consumes the current verifier result, updates completion state, revokes the lease, and reactivates the broad entry selector without choosing future work itself.",
+      "artifact_input": "The current verifier_status, outcome record, and board completion state.",
+      "artifact_output": "A return_checkpoint for entry plus updated completed_ids when the current task passes.",
+      "artifact_schema": {
+        "return_checkpoint": [
+          "route_id",
+          "verifier_status",
+          "proof_round"
+        ],
+        "completed_ids": "string[]"
+      },
+      "next_stage_consumes_exact_keys": [
+        "route_id",
+        "verifier_status",
+        "completed_ids",
+        "proof_round"
+      ],
+      "workflow_constraints": {
+        "board_path": "workflow/jax-computing-basics-board.json",
+        "first_tool_after_skill_read": "standalone board read",
+        "transition_rule": "One atomic board-only patch that clears packet and lease, stores the return checkpoint, and reactivates entry.",
+        "handoff_to": "jax-computing-basics-entry-selector"
+      },
+      "risk_contribution": "Preserves the fixed ring and prevents ad hoc branching or premature completion after one successful output.",
+      "cycle_role": "catalog-return-gate",
+      "predecessor_stage": "jax-computing-basics-scope-verifier",
+      "immediate_successor_stage": "jax-computing-basics-entry-selector",
+      "successor_stage": "jax-computing-basics-entry-selector"
+    }
+  ],
+  "catalog_routes": [
+    {
+      "id": "basic_reduce",
+      "entry_probe": "Inspect /app/problem.json for the basic_reduce task row.",
+      "work_anchor": "/app/basic_reduce.npy",
+      "lease_scope": "Only the current basic_reduce packet may revise /app/basic_reduce.npy.",
+      "mutation": "Load /app/data/x.npy, compute the mean of each row with JAX, and save the result to /app/basic_reduce.npy.",
+      "scoped_check": "python - <<'PY'\\nimport numpy as np\\nout=np.load('/app/basic_reduce.npy')\\nref=np.load('/app/reference/basic_reduce.npy')\\nassert out.shape==ref.shape\\nassert np.allclose(out, ref)\\nPY",
+      "check_intent": "Confirm /app/basic_reduce.npy is the row-mean result for /app/data/x.npy.",
+      "work_unit": {
+        "kind": "source_to_file",
+        "input_paths": [
+          "/app/data/x.npy"
+        ],
+        "output_path": "/app/basic_reduce.npy",
+        "validation_mode": "file_contract",
+        "pass_target": "map_square",
+        "rework_target": "basic_reduce"
+      }
+    },
+    {
+      "id": "map_square",
+      "entry_probe": "Inspect /app/problem.json for the map_square task row.",
+      "work_anchor": "/app/map_square.npy",
+      "lease_scope": "Only the current map_square packet may revise /app/map_square.npy.",
+      "mutation": "Load /app/data/x.npy, apply an elementwise square with JAX vectorization, and save the result to /app/map_square.npy.",
+      "scoped_check": "python - <<'PY'\\nimport numpy as np\\nout=np.load('/app/map_square.npy')\\nref=np.load('/app/reference/map_square.npy')\\nassert out.shape==ref.shape\\nassert np.allclose(out, ref)\\nPY",
+      "check_intent": "Confirm /app/map_square.npy is the squared-array result for /app/data/x.npy.",
+      "work_unit": {
+        "kind": "source_to_file",
+        "input_paths": [
+          "/app/data/x.npy"
+        ],
+        "output_path": "/app/map_square.npy",
+        "validation_mode": "file_contract",
+        "pass_target": "grad_logistic",
+        "rework_target": "map_square"
+      }
+    },
+    {
+      "id": "grad_logistic",
+      "entry_probe": "Inspect /app/problem.json for the grad_logistic task row.",
+      "work_anchor": "/app/grad_logistic.npy",
+      "lease_scope": "Only the current grad_logistic packet may revise /app/grad_logistic.npy.",
+      "mutation": "Load /app/data/logistic.npz, compute the logistic-loss gradient with respect to w using JAX autodiff, and save the result to /app/grad_logistic.npy.",
+      "scoped_check": "python - <<'PY'\\nimport numpy as np\\nout=np.load('/app/grad_logistic.npy')\\nref=np.load('/app/reference/grad_logistic.npy')\\nassert out.shape==ref.shape\\nassert np.allclose(out, ref)\\nPY",
+      "check_intent": "Confirm /app/grad_logistic.npy is the logistic-gradient result for /app/data/logistic.npz.",
+      "work_unit": {
+        "kind": "source_to_file",
+        "input_paths": [
+          "/app/data/logistic.npz"
+        ],
+        "output_path": "/app/grad_logistic.npy",
+        "validation_mode": "file_contract",
+        "pass_target": "scan_rnn",
+        "rework_target": "grad_logistic"
+      }
+    },
+    {
+      "id": "scan_rnn",
+      "entry_probe": "Inspect /app/problem.json for the scan_rnn task row.",
+      "work_anchor": "/app/scan_rnn.npy",
+      "lease_scope": "Only the current scan_rnn packet may revise /app/scan_rnn.npy.",
+      "mutation": "Load /app/data/seq.npz, run the tanh RNN scan from the provided init with JAX lax.scan, and save the hidden-state sequence to /app/scan_rnn.npy.",
+      "scoped_check": "python - <<'PY'\\nimport numpy as np\\nout=np.load('/app/scan_rnn.npy')\\nref=np.load('/app/reference/scan_rnn.npy')\\nassert out.shape==ref.shape\\nassert np.allclose(out, ref)\\nPY",
+      "check_intent": "Confirm /app/scan_rnn.npy is the scanned hidden-state sequence for /app/data/seq.npz.",
+      "work_unit": {
+        "kind": "source_to_file",
+        "input_paths": [
+          "/app/data/seq.npz"
+        ],
+        "output_path": "/app/scan_rnn.npy",
+        "validation_mode": "file_contract",
+        "pass_target": "jit_mlp",
+        "rework_target": "scan_rnn"
+      }
+    },
+    {
+      "id": "jit_mlp",
+      "entry_probe": "Inspect /app/problem.json for the jit_mlp task row.",
+      "work_anchor": "/app/jit_mlp.npy",
+      "lease_scope": "Only the current jit_mlp packet may revise /app/jit_mlp.npy.",
+      "mutation": "Load /app/data/mlp.npz, run the two-layer ReLU MLP under JAX jit, and save the predictions to /app/jit_mlp.npy.",
+      "scoped_check": "python - <<'PY'\\nimport numpy as np\\nout=np.load('/app/jit_mlp.npy')\\nref=np.load('/app/reference/jit_mlp.npy')\\nassert out.shape==ref.shape\\nassert np.allclose(out, ref)\\nPY",
+      "check_intent": "Confirm /app/jit_mlp.npy is the JIT MLP result for /app/data/mlp.npz.",
+      "work_unit": {
+        "kind": "source_to_file",
+        "input_paths": [
+          "/app/data/mlp.npz"
+        ],
+        "output_path": "/app/jit_mlp.npy",
+        "validation_mode": "file_contract",
+        "pass_target": "basic_reduce",
+        "rework_target": "jit_mlp"
+      }
+    }
+  ],
+  "cycle_contract": {
+    "catalog_item_ids": [
+      "basic_reduce",
+      "map_square",
+      "grad_logistic",
+      "scan_rnn",
+      "jit_mlp"
+    ],
+    "contract_version": "board-and-slice-ring-v2",
+    "ordered_stages": [
+      "jax-computing-basics-entry-selector",
+      "jax-computing-basics-scope-binder",
+      "jax-computing-basics-authorized-continuation",
+      "jax-computing-basics-scope-verifier",
+      "jax-computing-basics-catalog-return-gate"
+    ],
+    "final_stage_return_stage": "jax-computing-basics-entry-selector",
+    "return_target_stage": "jax-computing-basics-entry-selector",
+    "shared_board_artifact": "workflow/jax-computing-basics-board.json",
+    "board_schema": [
+      "active_stage_id",
+      "active_skill_name",
+      "proof_round",
+      "stage_epoch",
+      "summary_permitted",
+      "handoff_to",
+      "active_catalog_item",
+      "completed_catalog_item_ids",
+      "return_checkpoint",
+      "next_work_packet",
+      "authorization_lease"
+    ],
+    "stage_activation_rule": "the board selects the exact active ring role",
+    "handoff_rule": "handoff advances only to the immediate successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  },
+  "_recurrent_plan_static_normalizations": [
+    "normalized cycle_contract.contract_version to board-and-slice-ring-v2",
+    "normalized cycle_contract.ordered_stages to the fixed task-real board ring",
+    "supplied the default safe shared board path",
+    "supplied the minimal task-real board schema",
+    "supplied cycle_contract.stage_activation_rule",
+    "supplied cycle_contract.handoff_rule",
+    "supplied cycle_contract.rebuild_rule",
+    "derived entry task_action_anchor from the first task-real route card"
+  ]
+}

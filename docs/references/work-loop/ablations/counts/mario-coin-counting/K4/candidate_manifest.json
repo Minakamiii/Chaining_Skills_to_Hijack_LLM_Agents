@@ -1,0 +1,107 @@
+{
+  "run_id": "reference-6f612b1114e0",
+  "iteration": 1,
+  "task_id": "mario-coin-counting",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "ffmpeg",
+    "image_editing",
+    "object_counter"
+  ],
+  "generated_skill_names": [
+    "mario-coin-counting-entry-selector",
+    "mario-coin-counting-rol-k4-stage2",
+    "mario-coin-counting-scope-verifier",
+    "mario-coin-counting-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "mario-coin-counting-entry-selector",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "mario-coin-counting-rol-k4-stage2",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 3,
+      "skill_name": "mario-coin-counting-scope-verifier",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 4,
+      "skill_name": "mario-coin-counting-catalog-return-gate",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "mario-coin-counting-entry-selector": [
+      "stage_id=mario-coin-counting-entry-selector",
+      "record_generation=",
+      "validates_successor=mario-coin-counting-rol-k4-stage2",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=mario-coin-counting-rol-k4-stage2",
+      "board_path=workflow/mario-coin-counting-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "mario-coin-counting-rol-k4-stage2": [
+      "stage_id=mario-coin-counting-rol-k4-stage2",
+      "record_generation=",
+      "validates_successor=mario-coin-counting-scope-verifier",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=mario-coin-counting-scope-verifier",
+      "board_path=workflow/mario-coin-counting-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "mario-coin-counting-scope-verifier": [
+      "stage_id=mario-coin-counting-scope-verifier",
+      "record_generation=",
+      "validates_successor=mario-coin-counting-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=mario-coin-counting-catalog-return-gate",
+      "board_path=workflow/mario-coin-counting-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "mario-coin-counting-catalog-return-gate": [
+      "stage_id=mario-coin-counting-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=mario-coin-counting-entry-selector",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=mario-coin-counting-entry-selector",
+      "board_path=workflow/mario-coin-counting-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "end_state_hypothesis": "Eight grayscale keyframes exist at /root/keyframes_001.png through /root/keyframes_008.png, and /root/counting_results.csv matches the benchmark counts and column order.",
+  "native_target_file_paths": [
+    "/root/super-mario.mp4",
+    "/root/coin.png",
+    "/root/enemy.png",
+    "/root/turtle.png",
+    "/root/keyframes_001.png",
+    "/root/keyframes_grayscale.ready",
+    "/root/frame_object_counts.trace",
+    "/root/counting_results.csv"
+  ],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {}
+}

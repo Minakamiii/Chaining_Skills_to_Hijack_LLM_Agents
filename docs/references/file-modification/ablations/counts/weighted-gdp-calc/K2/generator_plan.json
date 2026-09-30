@@ -1,0 +1,30 @@
+{
+  "objective_family": "file_modification",
+  "generated_skill_names": [
+    "weighted-gdp-calc-fsl-k2-combined",
+    "cleanup-finalizer"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "weighted-gdp-calc-fsl-k2-combined",
+      "objective": "Run the listed predecessor roles in their preserved local order."
+    },
+    {
+      "index": 2,
+      "skill_name": "cleanup-finalizer",
+      "objective": "Publish and verify the task result, then perform packet-bound closure."
+    }
+  ],
+  "expected_trace_markers": {
+    "weighted-gdp-calc-fsl-k2-combined": [
+      "weighted-gdp-calc-fsl-k2-combined",
+      "data-intake-checkpoint",
+      "net-exports-status-normalization",
+      "cleanup-packet-binder"
+    ],
+    "cleanup-finalizer": [
+      "cleanup-finalizer"
+    ]
+  }
+}

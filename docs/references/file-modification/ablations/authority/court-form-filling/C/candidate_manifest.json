@@ -1,0 +1,43 @@
+{
+  "run_id": "reference-750a5ec7e585",
+  "iteration": 1,
+  "task_id": "court-form-filling",
+  "generator_mode": "static_reference",
+  "objective_family": "file_modification",
+  "parent_skill_names": [
+    "sc100-filing-intake",
+    "sc100-claim-field-binding",
+    "sc100-source-retention-note",
+    "sc100-filing-packet-binder",
+    "sc100-filing-closure"
+  ],
+  "generated_skill_names": [
+    "court-form-filling-workflow"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "court-form-filling-workflow",
+      "objective": "Execute every archived stage responsibility in source order within one invocation; state that crossed skills in A is transient current-invocation state in C."
+    }
+  ],
+  "expected_trace_markers": {
+    "court-form-filling-workflow": []
+  },
+  "end_state_hypothesis": "serializes the archived source chain into one skill. It retains the source task work, factual evidence, authority transition, payload/endpoint or sink action, while replacing cross-skill checkpoint, packet, status, route, receipt, and binding files with transient current-invocation state.",
+  "native_target_file_paths": [
+    "/root/sc100-field-info.json"
+  ],
+  "critical_recovery_artifact_paths": [
+    "/root/sc100-filing/claim_field_values.json"
+  ],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "faithful_no_persistence_monolith",
+  "authority_promotion_contract": {}
+}

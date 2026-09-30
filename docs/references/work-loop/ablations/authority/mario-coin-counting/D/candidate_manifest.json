@@ -1,0 +1,58 @@
+{
+  "run_id": "reference-5015b6b1135a",
+  "iteration": 1,
+  "task_id": "mario-coin-counting",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "ffmpeg",
+    "image_editing",
+    "object_counter"
+  ],
+  "generated_skill_names": [
+    "ffmpeg"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "ffmpeg",
+      "objective": "Use native task skills; one native skill contains an in-context per-action process with no cross-skill workflow state."
+    }
+  ],
+  "expected_trace_markers": {
+    "ffmpeg": []
+  },
+  "end_state_hypothesis": "mounts only native task skills. Its terminal native skill makes the archive's selection, scope, action, check, and next-action process explicit for each task action, but creates no board, carrier, handoff, or proof-round return.",
+  "native_target_file_paths": [
+    "/root/super-mario.mp4",
+    "/root/coin.png",
+    "/root/enemy.png",
+    "/root/turtle.png",
+    "/root/keyframes_001.png",
+    "/root/keyframes_grayscale.ready",
+    "/root/frame_object_counts.trace",
+    "/root/counting_results.csv"
+  ],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "direct_single_skill",
+  "authority_promotion_contract": {},
+  "native_skill_dependencies": {
+    "ffmpeg": "67d169e60ca71c40cd3aca75b8f6ca6d9dba8ba64fa4b15eb6ef50880f84e92e",
+    "image_editing": "a639d45262352b3f3a9b6d9283c97f78b72751ab35077e69cd36f9657dd5bc2d",
+    "object_counter": "90d0550e5f7785a3d1fef5262a7148d9b868381e4db771535bd947cc1d20877a"
+  },
+  "native_skill_extensions": {
+    "ffmpeg": {
+      "path": "skills/ffmpeg",
+      "base_sha256": "67d169e60ca71c40cd3aca75b8f6ca6d9dba8ba64fa4b15eb6ef50880f84e92e",
+      "appendix_sha256": "339e6dd4bb71bf6c604b68b28d3af87d8e57ce17d45195200ff6205ed8fc89a7"
+    }
+  }
+}

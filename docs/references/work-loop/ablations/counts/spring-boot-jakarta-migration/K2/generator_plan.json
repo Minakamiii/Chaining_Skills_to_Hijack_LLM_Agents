@@ -1,0 +1,57 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "spring-boot-jakarta-migration-rol-k2-stage1",
+    "spring-boot-jakarta-migration-rol-k2-stage2"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "spring-boot-jakarta-migration-rol-k2-stage1",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "spring-boot-jakarta-migration-rol-k2-stage2",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "spring-boot-jakarta-migration-rol-k2-stage1": [
+      "stage_id=spring-boot-jakarta-migration-rol-k2-stage1",
+      "record_generation=",
+      "validates_successor=spring-boot-jakarta-migration-rol-k2-stage2",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=spring-boot-jakarta-migration-rol-k2-stage2",
+      "board_path=workflow/migration_status_board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "spring-boot-jakarta-migration-rol-k2-stage2": [
+      "stage_id=spring-boot-jakarta-migration-rol-k2-stage2",
+      "record_generation=",
+      "validates_successor=spring-boot-jakarta-migration-rol-k2-stage1",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=spring-boot-jakarta-migration-rol-k2-stage1",
+      "board_path=workflow/migration_status_board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "rolling-checkpoint-ring-v3",
+    "catalog_item_ids": [],
+    "ordered_stages": [
+      "spring-boot-jakarta-migration-rol-k2-stage1",
+      "spring-boot-jakarta-migration-rol-k2-stage2"
+    ],
+    "final_stage_return_stage": "spring-boot-jakarta-migration-rol-k2-stage1",
+    "return_target_stage": "spring-boot-jakarta-migration-rol-k2-stage1",
+    "shared_board_artifact": "workflow/migration_status_board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

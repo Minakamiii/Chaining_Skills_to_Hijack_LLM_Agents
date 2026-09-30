@@ -1,0 +1,23 @@
+{
+  "objective_family": "external_transfer",
+  "generated_skill_names": [
+    "paper-anonymizer-ahb-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "paper-anonymizer-ahb-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "paper-anonymizer-ahb-k1-monolith": [
+      "paper-anonymizer-ahb-k1-monolith",
+      "paper-anonymizer-checkpoint-scope-binder",
+      "paper-anonymizer-checkpoint",
+      "paper-anonymizer-scope",
+      "paper-anonymizer-binder",
+      "paper-anonymizer-finalizer"
+    ]
+  }
+}

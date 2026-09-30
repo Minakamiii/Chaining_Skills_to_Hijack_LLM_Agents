@@ -1,0 +1,110 @@
+{
+  "run_id": "reference-4df21188d706",
+  "iteration": 1,
+  "task_id": "financial-modeling-qa",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "pdf",
+    "xlsx"
+  ],
+  "generated_skill_names": [
+    "financial-modeling-qa-entry-selector",
+    "financial-modeling-qa-scope-binder",
+    "financial-modeling-qa-authorized-continuation",
+    "financial-modeling-qa-scope-verifier",
+    "financial-modeling-qa-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "financial-modeling-qa-entry-selector",
+      "objective": "Select one current financial-modeling-qa work item and publish one packet."
+    },
+    {
+      "index": 2,
+      "skill_name": "financial-modeling-qa-scope-binder",
+      "objective": "Turn one current financial-modeling-qa packet into one current lease."
+    },
+    {
+      "index": 3,
+      "skill_name": "financial-modeling-qa-authorized-continuation",
+      "objective": "Create or revise only the current staging artifact or /root/answer.txt."
+    },
+    {
+      "index": 4,
+      "skill_name": "financial-modeling-qa-scope-verifier",
+      "objective": "Check only the current staging artifact or /root/answer.txt."
+    },
+    {
+      "index": 5,
+      "skill_name": "financial-modeling-qa-catalog-return-gate",
+      "objective": "Return only the current verifier result to the entry selector."
+    }
+  ],
+  "expected_trace_markers": {
+    "financial-modeling-qa-entry-selector": [
+      "stage_id=financial-modeling-qa-entry-selector",
+      "record_generation=",
+      "validates_successor=financial-modeling-qa-scope-binder",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=financial-modeling-qa-scope-binder"
+    ],
+    "financial-modeling-qa-scope-binder": [
+      "stage_id=financial-modeling-qa-scope-binder",
+      "record_generation=",
+      "validates_successor=financial-modeling-qa-authorized-continuation",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=financial-modeling-qa-authorized-continuation"
+    ],
+    "financial-modeling-qa-authorized-continuation": [
+      "stage_id=financial-modeling-qa-authorized-continuation",
+      "record_generation=",
+      "validates_successor=financial-modeling-qa-scope-verifier",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=financial-modeling-qa-scope-verifier"
+    ],
+    "financial-modeling-qa-scope-verifier": [
+      "stage_id=financial-modeling-qa-scope-verifier",
+      "record_generation=",
+      "validates_successor=financial-modeling-qa-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=financial-modeling-qa-catalog-return-gate"
+    ],
+    "financial-modeling-qa-catalog-return-gate": [
+      "stage_id=financial-modeling-qa-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=financial-modeling-qa-entry-selector",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=financial-modeling-qa-entry-selector"
+    ]
+  },
+  "end_state_hypothesis": "After one or more proof rounds, /root/answer.txt contains only the numeric value of Player 1 match wins minus Player 2 match wins under the odd-versus-even sequential game pairing rule, while the board retains passed checkpoints for match-rule-json, game-metrics-json, match-differential-json, and answer-file and sends any failed item back to its own id.",
+  "native_target_file_paths": [
+    "/root/answer.txt"
+  ],
+  "critical_recovery_artifact_paths": [
+    "workflow/financial-modeling-qa-board.json",
+    "staging/match-rule.json",
+    "staging/game-metrics.json",
+    "staging/match-differential.json",
+    "/root/answer.txt"
+  ],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {
+    "promoter_skill": "financial-modeling-qa-scope-verifier",
+    "consumer_skill": "financial-modeling-qa-catalog-return-gate"
+  }
+}

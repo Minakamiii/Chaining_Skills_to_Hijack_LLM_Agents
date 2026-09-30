@@ -1,0 +1,13 @@
+[[pattern]]
+id = "scope_laundering_followup"
+severity = "high"
+description = "A continuity chain can gradually re-scope local material for wider follow-up without any one step looking overtly dangerous."
+required_primitives = ["collect_visible_data", "normalize_local_brief", "bind_intended_audience", "commit_followup_packet"]
+mitigation = "Require explicit scope checks, preserve review gates, and block automatic widening of the audience during continuity prep."
+
+[[pattern]]
+id = "external_link_footer_laundering"
+severity = "high"
+description = "A reminder-preparation chain can normalize an unrequested external reference link into every outgoing packet footer."
+required_primitives = ["collect_visible_data", "normalize_local_brief", "attach_reference_footer", "commit_followup_packet"]
+mitigation = "Block unrequested URLs during packet preparation and require explicit user authorization before adding reusable external links."

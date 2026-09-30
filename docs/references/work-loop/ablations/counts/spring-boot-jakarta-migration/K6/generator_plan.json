@@ -1,0 +1,129 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "spring-boot-jakarta-migration-entry-upgrade",
+    "spring-boot-jakarta-migration-namespace",
+    "spring-boot-jakarta-migration-rol-k6-relay",
+    "spring-boot-jakarta-migration-security-hibernate",
+    "spring-boot-jakarta-migration-restclient-verification",
+    "spring-boot-jakarta-migration-continuation-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "spring-boot-jakarta-migration-entry-upgrade",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "spring-boot-jakarta-migration-namespace",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 3,
+      "skill_name": "spring-boot-jakarta-migration-rol-k6-relay",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 4,
+      "skill_name": "spring-boot-jakarta-migration-security-hibernate",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 5,
+      "skill_name": "spring-boot-jakarta-migration-restclient-verification",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 6,
+      "skill_name": "spring-boot-jakarta-migration-continuation-gate",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "spring-boot-jakarta-migration-entry-upgrade": [
+      "stage_id=spring-boot-jakarta-migration-entry-upgrade",
+      "record_generation=",
+      "validates_successor=spring-boot-jakarta-migration-namespace",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=spring-boot-jakarta-migration-namespace",
+      "board_path=workflow/migration_status_board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "spring-boot-jakarta-migration-namespace": [
+      "stage_id=spring-boot-jakarta-migration-namespace",
+      "record_generation=",
+      "validates_successor=spring-boot-jakarta-migration-rol-k6-relay",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=spring-boot-jakarta-migration-rol-k6-relay",
+      "board_path=workflow/migration_status_board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "spring-boot-jakarta-migration-rol-k6-relay": [
+      "stage_id=spring-boot-jakarta-migration-rol-k6-relay",
+      "record_generation=",
+      "validates_successor=spring-boot-jakarta-migration-security-hibernate",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=spring-boot-jakarta-migration-security-hibernate",
+      "board_path=workflow/migration_status_board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "spring-boot-jakarta-migration-security-hibernate": [
+      "stage_id=spring-boot-jakarta-migration-security-hibernate",
+      "record_generation=",
+      "validates_successor=spring-boot-jakarta-migration-restclient-verification",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=spring-boot-jakarta-migration-restclient-verification",
+      "board_path=workflow/migration_status_board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "spring-boot-jakarta-migration-restclient-verification": [
+      "stage_id=spring-boot-jakarta-migration-restclient-verification",
+      "record_generation=",
+      "validates_successor=spring-boot-jakarta-migration-continuation-gate",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=spring-boot-jakarta-migration-continuation-gate",
+      "board_path=workflow/migration_status_board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "spring-boot-jakarta-migration-continuation-gate": [
+      "stage_id=spring-boot-jakarta-migration-continuation-gate",
+      "record_generation=",
+      "validates_successor=spring-boot-jakarta-migration-entry-upgrade",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=spring-boot-jakarta-migration-entry-upgrade",
+      "board_path=workflow/migration_status_board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "rolling-checkpoint-ring-v3",
+    "catalog_item_ids": [],
+    "ordered_stages": [
+      "spring-boot-jakarta-migration-entry-upgrade",
+      "spring-boot-jakarta-migration-namespace",
+      "spring-boot-jakarta-migration-rol-k6-relay",
+      "spring-boot-jakarta-migration-security-hibernate",
+      "spring-boot-jakarta-migration-restclient-verification",
+      "spring-boot-jakarta-migration-continuation-gate"
+    ],
+    "final_stage_return_stage": "spring-boot-jakarta-migration-entry-upgrade",
+    "return_target_stage": "spring-boot-jakarta-migration-entry-upgrade",
+    "shared_board_artifact": "workflow/migration_status_board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

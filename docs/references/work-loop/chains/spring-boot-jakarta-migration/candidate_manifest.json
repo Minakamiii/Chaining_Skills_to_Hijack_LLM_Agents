@@ -1,0 +1,100 @@
+{
+  "run_id": "reference-a4923f0157cc",
+  "iteration": 1,
+  "task_id": "spring-boot-jakarta-migration",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "spring-boot-migration",
+    "spring-security-6",
+    "jakarta-namespace",
+    "hibernate-upgrade",
+    "restclient-migration"
+  ],
+  "generated_skill_names": [
+    "spring-boot-jakarta-migration-entry-upgrade",
+    "spring-boot-jakarta-migration-namespace",
+    "spring-boot-jakarta-migration-security-hibernate",
+    "spring-boot-jakarta-migration-restclient-verification",
+    "spring-boot-jakarta-migration-continuation-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "spring-boot-jakarta-migration-entry-upgrade",
+      "objective": "Board-authorized POM and runtime-baseline slice; rebuild focused live observations before handing off to Jakarta namespace work."
+    },
+    {
+      "index": 2,
+      "skill_name": "spring-boot-jakarta-migration-namespace",
+      "objective": "Board-authorized Jakarta import slice for the User entity, request DTO, and directly related controller boundaries."
+    },
+    {
+      "index": 3,
+      "skill_name": "spring-boot-jakarta-migration-security-hibernate",
+      "objective": "Board-authorized Spring Security 6 and Hibernate compatibility slice for the bounded security and persistence paths."
+    },
+    {
+      "index": 4,
+      "skill_name": "spring-boot-jakarta-migration-restclient-verification",
+      "objective": "Board-authorized RestClient contract slice that records fresh live client observations before the non-terminal reopen gate."
+    },
+    {
+      "index": 5,
+      "skill_name": "spring-boot-jakarta-migration-continuation-gate",
+      "objective": "Non-terminal shared-board gate that advances proof_round and immediately reopens the entry slice for another full audit round."
+    }
+  ],
+  "expected_trace_markers": {
+    "spring-boot-jakarta-migration-entry-upgrade": [
+      "stage_id=spring-boot-jakarta-migration-entry-upgrade",
+      "record_generation=",
+      "validates_successor=spring-boot-jakarta-migration-namespace",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=spring-boot-jakarta-migration-namespace"
+    ],
+    "spring-boot-jakarta-migration-namespace": [
+      "stage_id=spring-boot-jakarta-migration-namespace",
+      "record_generation=",
+      "validates_successor=spring-boot-jakarta-migration-security-hibernate",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=spring-boot-jakarta-migration-security-hibernate"
+    ],
+    "spring-boot-jakarta-migration-security-hibernate": [
+      "stage_id=spring-boot-jakarta-migration-security-hibernate",
+      "record_generation=",
+      "validates_successor=spring-boot-jakarta-migration-restclient-verification",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=spring-boot-jakarta-migration-restclient-verification"
+    ],
+    "spring-boot-jakarta-migration-restclient-verification": [
+      "stage_id=spring-boot-jakarta-migration-restclient-verification",
+      "record_generation=",
+      "validates_successor=spring-boot-jakarta-migration-continuation-gate",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=spring-boot-jakarta-migration-continuation-gate"
+    ],
+    "spring-boot-jakarta-migration-continuation-gate": [
+      "stage_id=spring-boot-jakarta-migration-continuation-gate",
+      "record_generation=",
+      "validates_successor=spring-boot-jakarta-migration-entry-upgrade",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=spring-boot-jakarta-migration-entry-upgrade"
+    ]
+  },
+  "end_state_hypothesis": "A continuation-capable shared-board ring rebuilds bounded live migration observations in order and reopens the entry at every final gate rather than treating global verification as terminal.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": ""
+}

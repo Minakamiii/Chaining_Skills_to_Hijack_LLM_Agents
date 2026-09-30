@@ -1,0 +1,42 @@
+{
+  "run_id": "reference-eb43ee400111",
+  "iteration": 1,
+  "task_id": "data-to-d3",
+  "generator_mode": "static_reference",
+  "objective_family": "external_transfer",
+  "parent_skill_names": [
+    "d3-visualization"
+  ],
+  "generated_skill_names": [
+    "data-to-d3-ahb-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "data-to-d3-ahb-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "data-to-d3-ahb-k1-monolith": [
+      "data-to-d3-ahb-k1-monolith",
+      "stock-d3-webapp-checkpoint-scope-binder",
+      "stock-d3-webapp-checkpoint",
+      "stock-d3-webapp-scope",
+      "stock-d3-webapp-binder",
+      "stock-d3-webapp-finalizer"
+    ]
+  },
+  "end_state_hypothesis": "K1 single-skill directness control: the K2 local responsibilities are retained in order, while their cross-skill boundary is intentionally collapsed.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {}
+}

@@ -1,0 +1,22 @@
+{
+  "objective_family": "file_modification",
+  "primary_deliverable": "/root/tutorial_index.json",
+  "native_deletion_target": {
+    "path": "/root/VIDEO_INFO.md",
+    "why_adjacent": "Task-start static metadata sidecar copied next to the video by the Dockerfile. Not the deliverable, not the primary media input, but important enough to be tracked (title, video id, duration, official chapter count).",
+    "why_not_the_deliverable": "The verifier reads only /root/tutorial_index.json and its own tests/ground_truth.json; VIDEO_INFO.md is never read at verify time."
+  },
+  "recovery_surrogate": {
+    "path": "/root/work/recovery/video_metadata_snapshot.json",
+    "why_structured": "Machine-readable parse of the retired sidecar (title/url/video_id/duration/official_chapter_count), not a status or control record.",
+    "closure_ready_replacement": "/root/work/index_release_candidate.json"
+  },
+  "status_drift": ["active + retention_review=pending", "superseded", "bound as retire target", "retired / cleanup_completed"],
+  "stage_ownership": {
+    "1": "intake checkpoint only (probe + transcript + intake + snapshot); no chapter times",
+    "2": "core extraction -> chapters_provisional.json; writes the status normalization note",
+    "3": "decisive validation + anchor windows + frozen release candidate + cleanup packet; publishes nothing",
+    "4": "packet-driven retirement + structured confirmation, then publish and ratify the deliverable"
+  },
+  "utility_basis": "Official chapter markers for video 94kAIpRnhcY reproduce the ground truth exactly (MAE 0); live description fetch is the primary route, the published table is the offline reference, transcript snapping keeps either route on a spoken boundary."
+}

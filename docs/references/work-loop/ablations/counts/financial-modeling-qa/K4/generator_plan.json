@@ -1,0 +1,99 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "financial-modeling-qa-entry-selector",
+    "financial-modeling-qa-rol-k4-stage2",
+    "financial-modeling-qa-scope-verifier",
+    "financial-modeling-qa-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "financial-modeling-qa-entry-selector",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "financial-modeling-qa-rol-k4-stage2",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 3,
+      "skill_name": "financial-modeling-qa-scope-verifier",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 4,
+      "skill_name": "financial-modeling-qa-catalog-return-gate",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "financial-modeling-qa-entry-selector": [
+      "stage_id=financial-modeling-qa-entry-selector",
+      "record_generation=",
+      "validates_successor=financial-modeling-qa-rol-k4-stage2",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=financial-modeling-qa-rol-k4-stage2",
+      "board_path=workflow/financial-modeling-qa-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "financial-modeling-qa-rol-k4-stage2": [
+      "stage_id=financial-modeling-qa-rol-k4-stage2",
+      "record_generation=",
+      "validates_successor=financial-modeling-qa-scope-verifier",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=financial-modeling-qa-scope-verifier",
+      "board_path=workflow/financial-modeling-qa-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "financial-modeling-qa-scope-verifier": [
+      "stage_id=financial-modeling-qa-scope-verifier",
+      "record_generation=",
+      "validates_successor=financial-modeling-qa-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=financial-modeling-qa-catalog-return-gate",
+      "board_path=workflow/financial-modeling-qa-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "financial-modeling-qa-catalog-return-gate": [
+      "stage_id=financial-modeling-qa-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=financial-modeling-qa-entry-selector",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=financial-modeling-qa-entry-selector",
+      "board_path=workflow/financial-modeling-qa-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "board-and-slice-ring-v2",
+    "catalog_item_ids": [
+      "match-rule-json",
+      "turn-ledger-json",
+      "game-score-json",
+      "match-differential-json",
+      "answer-file"
+    ],
+    "ordered_stages": [
+      "financial-modeling-qa-entry-selector",
+      "financial-modeling-qa-rol-k4-stage2",
+      "financial-modeling-qa-scope-verifier",
+      "financial-modeling-qa-catalog-return-gate"
+    ],
+    "final_stage_return_stage": "financial-modeling-qa-entry-selector",
+    "return_target_stage": "financial-modeling-qa-entry-selector",
+    "shared_board_artifact": "workflow/financial-modeling-qa-board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "run_id": "reference-655e63f353e0",
+  "iteration": 1,
+  "task_id": "jax-computing-basics",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "jax-skills"
+  ],
+  "generated_skill_names": [
+    "jax-computing-basics-entry-selector",
+    "jax-computing-basics-scope-binder",
+    "jax-computing-basics-authorized-continuation",
+    "jax-computing-basics-scope-verifier",
+    "jax-computing-basics-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "jax-computing-basics-entry-selector",
+      "objective": "Read /app/problem.json, choose one current JAX task row, and publish one bounded work packet."
+    },
+    {
+      "index": 2,
+      "skill_name": "jax-computing-basics-scope-binder",
+      "objective": "Copy the current packet into one exact lease for a single output file."
+    },
+    {
+      "index": 3,
+      "skill_name": "jax-computing-basics-authorized-continuation",
+      "objective": "Run one JAX computation and write the current output array."
+    },
+    {
+      "index": 4,
+      "skill_name": "jax-computing-basics-scope-verifier",
+      "objective": "Run the current shape-and-allclose check for the leased output."
+    },
+    {
+      "index": 5,
+      "skill_name": "jax-computing-basics-catalog-return-gate",
+      "objective": "Return the current verifier result to entry and clear the active lease."
+    }
+  ],
+  "expected_trace_markers": {
+    "jax-computing-basics-entry-selector": [
+      "stage_id=jax-computing-basics-entry-selector",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-scope-binder",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=jax-computing-basics-scope-binder"
+    ],
+    "jax-computing-basics-scope-binder": [
+      "stage_id=jax-computing-basics-scope-binder",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-authorized-continuation",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=jax-computing-basics-authorized-continuation"
+    ],
+    "jax-computing-basics-authorized-continuation": [
+      "stage_id=jax-computing-basics-authorized-continuation",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-scope-verifier",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=jax-computing-basics-scope-verifier"
+    ],
+    "jax-computing-basics-scope-verifier": [
+      "stage_id=jax-computing-basics-scope-verifier",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=jax-computing-basics-catalog-return-gate"
+    ],
+    "jax-computing-basics-catalog-return-gate": [
+      "stage_id=jax-computing-basics-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-entry-selector",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=jax-computing-basics-entry-selector"
+    ]
+  },
+  "end_state_hypothesis": "After one proof round, completed_ids contains basic_reduce, map_square, grad_logistic, scan_rnn, and jit_mlp, each output named in /app/problem.json matches its /app/reference counterpart, and the gate has returned control to the entry selector for the next proof round.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {
+    "promoter_skill": "jax-computing-basics-scope-verifier",
+    "consumer_skill": "jax-computing-basics-catalog-return-gate"
+  }
+}

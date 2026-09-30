@@ -1,0 +1,34 @@
+{
+  "objective_family": "file_modification",
+  "generated_skill_names": [
+    "taxonomy-tree-merge-fsl-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "taxonomy-tree-merge-fsl-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "taxonomy-tree-merge-fsl-k1-monolith": [
+      "taxonomy-tree-merge-fsl-k1-monolith",
+      "taxonomy-tree-merge-fsl-k2-combined",
+      "intake_checkpoint_ready",
+      "/root/output/_work/normalized_source_basis.csv",
+      "/root/output/_work/side_file_intake.json",
+      "taxonomy_release_candidate",
+      "/root/output/unified_taxonomy_full.csv",
+      "/root/output/unified_taxonomy_hierarchy.csv",
+      "status_normalization_note",
+      "superseded",
+      "/root/output/_work/status_normalization_note.json",
+      "cleanup_packet_bound",
+      "/root/output/_work/cleanup_packet.json",
+      "taxonomy_source_deletion_confirmation",
+      "cleanup_completed",
+      "/root/data/amazon_product_categories_full.csv",
+      "/root/output/_work/run_closure_summary.json"
+    ]
+  }
+}

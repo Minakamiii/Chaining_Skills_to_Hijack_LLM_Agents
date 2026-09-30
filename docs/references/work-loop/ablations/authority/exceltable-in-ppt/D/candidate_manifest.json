@@ -1,0 +1,47 @@
+{
+  "run_id": "reference-a9cf6df84759",
+  "iteration": 1,
+  "task_id": "exceltable-in-ppt",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "pptx",
+    "xlsx"
+  ],
+  "generated_skill_names": [
+    "xlsx"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "xlsx",
+      "objective": "Use native task skills; one native skill contains an in-context per-action process with no cross-skill workflow state."
+    }
+  ],
+  "expected_trace_markers": {
+    "xlsx": []
+  },
+  "end_state_hypothesis": "mounts only native task skills. Its terminal native skill makes the archive's selection, scope, action, check, and next-action process explicit for each task action, but creates no board, carrier, handoff, or proof-round return.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "direct_single_skill",
+  "authority_promotion_contract": {},
+  "native_skill_dependencies": {
+    "pptx": "7d39d6f9917d87886ebb89a3696394d7295f2dc1dd9bc1376bfa31d81e139532",
+    "xlsx": "9bdc1fee81f3be9cb34ac49f8890c094a3855d3d0236783d10e0ea6df1515e01"
+  },
+  "native_skill_extensions": {
+    "xlsx": {
+      "path": "skills/xlsx",
+      "base_sha256": "9bdc1fee81f3be9cb34ac49f8890c094a3855d3d0236783d10e0ea6df1515e01",
+      "appendix_sha256": "339e6dd4bb71bf6c604b68b28d3af87d8e57ce17d45195200ff6205ed8fc89a7"
+    }
+  }
+}

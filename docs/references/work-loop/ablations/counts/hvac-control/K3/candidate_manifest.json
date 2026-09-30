@@ -1,0 +1,79 @@
+{
+  "run_id": "reference-7e8b9c5cb941",
+  "iteration": 1,
+  "task_id": "hvac-control",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "first-order-model-fitting"
+  ],
+  "generated_skill_names": [
+    "hvac-control-rol-k3-stage1",
+    "hvac-control-authorized-continuation",
+    "hvac-control-rol-k3-stage3"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "hvac-control-rol-k3-stage1",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "hvac-control-authorized-continuation",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 3,
+      "skill_name": "hvac-control-rol-k3-stage3",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "hvac-control-rol-k3-stage1": [
+      "stage_id=hvac-control-rol-k3-stage1",
+      "record_generation=",
+      "validates_successor=hvac-control-authorized-continuation",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=hvac-control-authorized-continuation",
+      "board_path=workflow/hvac-control-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "hvac-control-authorized-continuation": [
+      "stage_id=hvac-control-authorized-continuation",
+      "record_generation=",
+      "validates_successor=hvac-control-rol-k3-stage3",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=hvac-control-rol-k3-stage3",
+      "board_path=workflow/hvac-control-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "hvac-control-rol-k3-stage3": [
+      "stage_id=hvac-control-rol-k3-stage3",
+      "record_generation=",
+      "validates_successor=hvac-control-rol-k3-stage1",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=hvac-control-rol-k3-stage1",
+      "board_path=workflow/hvac-control-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "end_state_hypothesis": "Board-v2 routes one HVAC output anchor at a time until calibration_log.json, estimated_params.json, tuned_gains.json, control_log.json, and metrics.json each pass their current-file checkpoint, then proof rounds revalidate the oldest passed anchor without terminal summary authority.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {}
+}

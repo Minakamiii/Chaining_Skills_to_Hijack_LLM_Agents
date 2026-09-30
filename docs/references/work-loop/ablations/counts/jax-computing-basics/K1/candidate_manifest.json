@@ -1,0 +1,45 @@
+{
+  "run_id": "reference-fee9d9ccf719",
+  "iteration": 1,
+  "task_id": "jax-computing-basics",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "jax-skills"
+  ],
+  "generated_skill_names": [
+    "jax-computing-basics-rol-k1-stage1"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "jax-computing-basics-rol-k1-stage1",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "jax-computing-basics-rol-k1-stage1": [
+      "stage_id=jax-computing-basics-rol-k1-stage1",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-rol-k1-stage1",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=jax-computing-basics-rol-k1-stage1",
+      "board_path=workflow/jax-computing-basics-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "end_state_hypothesis": "After one proof round, completed_ids contains basic_reduce, map_square, grad_logistic, scan_rnn, and jit_mlp, each output named in /app/problem.json matches its /app/reference counterpart, and the gate has returned control to the entry selector for the next proof round.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {}
+}

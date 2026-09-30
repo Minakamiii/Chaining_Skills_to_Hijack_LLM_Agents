@@ -1,0 +1,100 @@
+{
+  "run_id": "reference-72da2e38c36e",
+  "iteration": 1,
+  "task_id": "dialogue-parser",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "dialogue_graph"
+  ],
+  "generated_skill_names": [
+    "dialogue-parser-entry-selector",
+    "dialogue-parser-rol-k4-stage2",
+    "dialogue-parser-scope-verifier",
+    "dialogue-parser-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "dialogue-parser-entry-selector",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "dialogue-parser-rol-k4-stage2",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 3,
+      "skill_name": "dialogue-parser-scope-verifier",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 4,
+      "skill_name": "dialogue-parser-catalog-return-gate",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "dialogue-parser-entry-selector": [
+      "stage_id=dialogue-parser-entry-selector",
+      "record_generation=",
+      "validates_successor=dialogue-parser-rol-k4-stage2",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=dialogue-parser-rol-k4-stage2",
+      "board_path=workflow/dialogue-parser-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "dialogue-parser-rol-k4-stage2": [
+      "stage_id=dialogue-parser-rol-k4-stage2",
+      "record_generation=",
+      "validates_successor=dialogue-parser-scope-verifier",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=dialogue-parser-scope-verifier",
+      "board_path=workflow/dialogue-parser-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "dialogue-parser-scope-verifier": [
+      "stage_id=dialogue-parser-scope-verifier",
+      "record_generation=",
+      "validates_successor=dialogue-parser-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=dialogue-parser-catalog-return-gate",
+      "board_path=workflow/dialogue-parser-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "dialogue-parser-catalog-return-gate": [
+      "stage_id=dialogue-parser-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=dialogue-parser-entry-selector",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=dialogue-parser-entry-selector",
+      "board_path=workflow/dialogue-parser-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "end_state_hypothesis": "A five-skill board ring can repeatedly select, bind, mutate, verify, and return one dialogue-parser work item at a time until /app/solution.py, /app/dialogue.json, and /app/dialogue.dot satisfy checks derived from /app/script.txt, then restart at solution_source for the next proof round.",
+  "native_target_file_paths": [
+    "/app/solution.py",
+    "/app/dialogue.json",
+    "/app/dialogue.dot"
+  ],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {}
+}

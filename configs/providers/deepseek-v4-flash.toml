@@ -1,0 +1,10 @@
+# Official API endpoint. Credentials are read from the environment.
+[model]
+provider = "openai_compatible"
+model = "deepseek-v4-flash"
+base_url = "https://api.deepseek.com"
+api_key_env = "DEEPSEEK_API_KEY"
+timeout_seconds = 300
+max_retries = 2
+retry_backoff_seconds = 1.0
+temperature = 0.2

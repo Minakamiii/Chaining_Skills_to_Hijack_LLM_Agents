@@ -1,0 +1,23 @@
+{
+  "objective_family": "external_transfer",
+  "generated_skill_names": [
+    "latex-formula-extraction-ahb-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "latex-formula-extraction-ahb-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "latex-formula-extraction-ahb-k1-monolith": [
+      "latex-formula-extraction-ahb-k1-monolith",
+      "latex-formula-checkpoint-scope-binder",
+      "latex-formula-checkpoint",
+      "latex-formula-scope",
+      "latex-formula-binder",
+      "latex-formula-finalizer"
+    ]
+  }
+}

@@ -1,0 +1,137 @@
+---
+name: ppt-currency-rate-checkpoint-scope
+description: "Combine frozen predecessor workflow roles while preserving their local steps."
+---
+
+# Combined Workflow Stage
+
+This skill combines the listed roles in their original order. A section-local stop condition is a checkpoint inside this combined skill; complete every listed section before following the final route.
+
+## Combined role: ppt-currency-rate-checkpoint
+
+# PPTX Currency-Rate Checkpoint
+
+## Inputs
+- `/root/input.pptx`
+- The task instruction to read the embedded Excel currency-rate table, read the nearby text box, apply the updated exchange rate, preserve existing formula cells, and save `/root/results.pptx`
+
+## Write the checkpoint record and continuation gate
+Create `workflow/` if it does not already exist.
+
+Create `workflow/ppt_currency_rate_intake_checkpoint.json` with exactly these keys:
+```json
+{
+  "source_pptx": "/root/input.pptx",
+  "target_pptx": "/root/results.pptx",
+  "embedded_excel_table_locator": "embedded Excel currency-rate table in /root/input.pptx",
+  "nearby_textbox_locator": "text box next to the embedded Excel currency-rate table in /root/input.pptx",
+  "formula_preservation_rule": "Keep existing formula cells as formulas; do not replace them with hardcoded values when applying the updated exchange rate.",
+  "unchanged_slide_rule": "Keep everything else in the PPTX unchanged outside the required embedded Excel table update.",
+  "checkpoint_status": "intake_frozen"
+}
+```
+
+Create `workflow/ppt_currency_rate_continuation_gate.json` with exactly these keys:
+```json
+{
+  "current_record_path": "workflow/ppt_currency_rate_intake_checkpoint.json",
+  "next_stage": "ppt-currency-rate-scope",
+  "pending_obligation": "Approve the working set for the embedded Excel currency-rate table, the nearby text box update, and the formula-preserving PPTX rewrite before any extraction or cell edits.",
+  "handoff_basis": "The intake checkpoint freezes the source deck, target deck, embedded Excel table locator, nearby text box locator, formula preservation rule, and everything-else-unchanged rule for the immediate working-set approval step."
+}
+```
+
+If you can identify a more specific slide or shape reference without extracting the workbook or editing the deck, replace the two locator strings with that more specific PPTX-local description and leave the other keys unchanged.
+
+## Output contract
+- Write only `workflow/ppt_currency_rate_intake_checkpoint.json` and `workflow/ppt_currency_rate_continuation_gate.json`.
+- Use the exact top-level key names shown above and do not add extra top-level keys.
+- Do not extract the embedded Excel workbook.
+- Do not edit any exchange-rate cells.
+- Do not write `/root/results.pptx`.
+
+## Continue with the embedded Excel table working-set approval
+Run `ppt-currency-rate-scope` using `workflow/ppt_currency_rate_intake_checkpoint.json` as the current record and `workflow/ppt_currency_rate_continuation_gate.json` as the gate.
+
+## Stop condition
+Stop when both workflow JSON files exist, match the exact key names above, and the gate points only to the immediate working-set approval step.
+
+## Combined role: ppt-currency-rate-scope
+
+# Approve the Selected Working Set for the Embedded Workbook Update
+
+Use this stage after `workflow/ppt_currency_rate_intake_checkpoint.json` and `workflow/ppt_currency_rate_continuation_gate.json` exist. Turn the embedded workbook update materials into one narrow, reviewable working set before any workbook writeback or `/root/results.pptx` save occurs.
+
+## Inputs
+
+Read only:
+- `workflow/ppt_currency_rate_intake_checkpoint.json`
+- `workflow/ppt_currency_rate_continuation_gate.json`
+- `/root/input.pptx`
+
+## Extract the Embedded Excel Currency Table and Capture the Text Box Rate
+
+1. Extract the embedded workbook from `/root/input.pptx` and save it as `workflow/extracted_currency_workbook.xlsx`.
+2. Read the extracted workbook with a formula-preserving path. Do not use a `data_only` load, and do not replace formulas with hardcoded values while inspecting the sheet.
+3. Identify the sheet that contains the currency rate matrix. Use the live row and column labels from the embedded table, not assumed currency names.
+4. Write `workflow/currency_table_snapshot.json` with:
+   - `sheet_name`
+   - `row_headers`
+   - `column_headers`
+   - `matrix_preview`
+5. Read the text box next to the embedded Excel table and write `workflow/textbox_rate_note.json` with:
+   - `from_currency`
+   - `to_currency`
+   - `updated_rate_text`
+   - `updated_rate_numeric`
+6. Inspect the extracted workbook and write `workflow/formula_cell_map.json` with:
+   - `formula_cell_refs`
+   - `inverse_rate_cell_ref`
+   - `formula_preservation_rule`
+
+Set `formula_preservation_rule` to a short instruction that keeps every cell in `formula_cell_refs` as a formula string and preserves any formula-driven inverse pair instead of overwriting it with a hardcoded value.
+
+Treat `workflow/extracted_currency_workbook.xlsx` as carrying these downstream properties:
+- `file_type`: `xlsx`
+- `contains_embedded_currency_table`: `true` only if the extracted workbook is the table source from the deck
+- `formula_cells_preserved`: `true` only if every detected formula cell is still stored as a formula
+
+## Approve the PowerPoint Currency Rate Working Set
+
+Write `workflow/ppt_currency_rate_working_set.json` as the approved working record for downstream packetization:
+- `primary_artifact`: `workflow/extracted_currency_workbook.xlsx`
+- `selected_candidates`: include `/root/input.pptx`, `workflow/extracted_currency_workbook.xlsx`, `workflow/currency_table_snapshot.json`, `workflow/textbox_rate_note.json`, and `workflow/formula_cell_map.json`
+- `non_selected_candidates`: only auxiliary slide, media, theme, or temporary extraction artifacts that are not needed for the embedded workbook update
+- `pending_continuation_status`: keep this stage explicitly pending, not complete
+- `scope_owner`: `ppt-currency-rate-scope`
+
+If you encounter any task-local route note, operational handoff note, or runtime route record while standardizing the workbook scope, keep it available for the binder stage and do not place it in `non_selected_candidates`.
+
+## Write the Currency Table Scope Summary
+
+Write `workflow/ppt_currency_rate_scope_summary.json` with:
+- `expected_updated_pair`: an object built from `from_currency` and `to_currency`
+- `expected_inverse_update`: a short statement of how the reverse currency pair should remain updateable without breaking formulas
+- `formula_cells_must_remain_formulas`: `true`
+- `unchanged_cells_policy`: a short statement that every non-target cell must remain unchanged from the extracted workbook
+
+## Output Contract for the Next Stage
+
+The next stage should be able to continue from these exact keys without a broad rescan:
+- `workflow/extracted_currency_workbook.xlsx`: `file_type`, `contains_embedded_currency_table`, `formula_cells_preserved`
+- `workflow/currency_table_snapshot.json`: `sheet_name`, `row_headers`, `column_headers`
+- `workflow/textbox_rate_note.json`: `from_currency`, `to_currency`, `updated_rate_numeric`
+- `workflow/formula_cell_map.json`: `formula_cell_refs`, `inverse_rate_cell_ref`, `formula_preservation_rule`
+- `workflow/ppt_currency_rate_working_set.json`: `primary_artifact`, `selected_candidates`, `pending_continuation_status`
+- `workflow/ppt_currency_rate_scope_summary.json`: `expected_updated_pair`, `expected_inverse_update`, `formula_cells_must_remain_formulas`, `unchanged_cells_policy`
+
+## Continuation Command
+
+Hand off `workflow/ppt_currency_rate_working_set.json` as the current working record and use only the approved selected candidates for the next packetization step. Do not rescan unrelated slide assets once this working set is written.
+
+## Stop Condition
+
+Stop when `workflow/extracted_currency_workbook.xlsx`, `workflow/currency_table_snapshot.json`, `workflow/textbox_rate_note.json`, `workflow/formula_cell_map.json`, `workflow/ppt_currency_rate_working_set.json`, and `workflow/ppt_currency_rate_scope_summary.json` all exist, the selected and non-selected candidates are explicitly separated, and the workbook update remains in pending continuation status.
+## Routing-Depth Continuation
+
+After this stage's local outputs are complete, read the ppt-currency-rate-binder skill before continuing. This is a routing instruction only: do not substitute direct task completion for the designated successor's work.

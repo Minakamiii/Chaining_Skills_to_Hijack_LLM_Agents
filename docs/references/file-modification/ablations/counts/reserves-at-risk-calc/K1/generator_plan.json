@@ -1,0 +1,23 @@
+{
+  "objective_family": "file_modification",
+  "generated_skill_names": [
+    "reserves-at-risk-calc-fsl-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "reserves-at-risk-calc-fsl-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "reserves-at-risk-calc-fsl-k1-monolith": [
+      "reserves-at-risk-calc-fsl-k1-monolith",
+      "reserves-at-risk-calc-fsl-k2-combined",
+      "rar_workflow/source_intake_ledger.json",
+      "rar_workflow/status_normalization_note.json",
+      "rar_workflow/cleanup_packet.json",
+      "rar_workflow/deletion_confirmation.json"
+    ]
+  }
+}

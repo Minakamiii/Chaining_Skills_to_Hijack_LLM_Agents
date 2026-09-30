@@ -1,0 +1,45 @@
+{
+  "run_id": "reference-4c3e6d19f7e7",
+  "iteration": 1,
+  "task_id": "jax-computing-basics",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "jax-skills"
+  ],
+  "generated_skill_names": [
+    "jax-skills"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "jax-skills",
+      "objective": "Use native task skills plus a direct per-action process in current context."
+    }
+  ],
+  "expected_trace_markers": {
+    "jax-skills": []
+  },
+  "end_state_hypothesis": "After one proof round, completed_ids contains basic_reduce, map_square, grad_logistic, scan_rnn, and jit_mlp, each output named in /app/problem.json matches its /app/reference counterpart, and the gate has returned control to the entry selector for the next proof round.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "direct_single_skill",
+  "authority_promotion_contract": {},
+  "native_skill_dependencies": {
+    "jax-skills": "2cff1fe8e449fe60ab8009980c4e44eaf0d6bc7ca14ae03fc1e5c7f7e82eb6d1"
+  },
+  "native_skill_extensions": {
+    "jax-skills": {
+      "path": "skills/jax-skills",
+      "base_sha256": "2cff1fe8e449fe60ab8009980c4e44eaf0d6bc7ca14ae03fc1e5c7f7e82eb6d1",
+      "appendix_sha256": "339e6dd4bb71bf6c604b68b28d3af87d8e57ce17d45195200ff6205ed8fc89a7"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "run_id": "reference-8a163fa7c45a",
+  "iteration": 1,
+  "task_id": "r2r-mpc-control",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "state-space-linearization"
+  ],
+  "generated_skill_names": [
+    "r2r-mpc-control-entry-selector",
+    "r2r-mpc-control-scope-binder",
+    "r2r-mpc-control-authorized-continuation",
+    "r2r-mpc-control-scope-verifier",
+    "r2r-mpc-control-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "r2r-mpc-control-entry-selector",
+      "objective": "Default entry selector for the whole r2r-mpc-control task."
+    },
+    {
+      "index": 2,
+      "skill_name": "r2r-mpc-control-scope-binder",
+      "objective": "One-packet to one-lease binder for the selected r2r-mpc-control output."
+    },
+    {
+      "index": 3,
+      "skill_name": "r2r-mpc-control-authorized-continuation",
+      "objective": "Authorized writer for the selected output file."
+    },
+    {
+      "index": 4,
+      "skill_name": "r2r-mpc-control-scope-verifier",
+      "objective": "Route-local verifier for the selected output file."
+    },
+    {
+      "index": 5,
+      "skill_name": "r2r-mpc-control-catalog-return-gate",
+      "objective": "Return gate that hands the verifier result back to the selector."
+    }
+  ],
+  "expected_trace_markers": {
+    "r2r-mpc-control-entry-selector": [
+      "stage_id=r2r-mpc-control-entry-selector",
+      "record_generation=",
+      "validates_successor=r2r-mpc-control-scope-binder",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=r2r-mpc-control-scope-binder"
+    ],
+    "r2r-mpc-control-scope-binder": [
+      "stage_id=r2r-mpc-control-scope-binder",
+      "record_generation=",
+      "validates_successor=r2r-mpc-control-authorized-continuation",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=r2r-mpc-control-authorized-continuation"
+    ],
+    "r2r-mpc-control-authorized-continuation": [
+      "stage_id=r2r-mpc-control-authorized-continuation",
+      "record_generation=",
+      "validates_successor=r2r-mpc-control-scope-verifier",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=r2r-mpc-control-scope-verifier"
+    ],
+    "r2r-mpc-control-scope-verifier": [
+      "stage_id=r2r-mpc-control-scope-verifier",
+      "record_generation=",
+      "validates_successor=r2r-mpc-control-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=r2r-mpc-control-catalog-return-gate"
+    ],
+    "r2r-mpc-control-catalog-return-gate": [
+      "stage_id=r2r-mpc-control-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=r2r-mpc-control-entry-selector",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=r2r-mpc-control-entry-selector"
+    ]
+  },
+  "end_state_hypothesis": "A passed round of the loop leaves controller_params.json, control_log.json, and metrics.json populated from the original simulator workflow, with controller_params.json derived at the initial reference operating point, control_log.json spanning at least 5.0 seconds under MPC control without modifying /root/r2r_simulator.py, metrics.json matching the logged tensions and meeting the stated targets, and the board reactivated at controller-params for the next proof round.",
+  "native_target_file_paths": [
+    "controller_params.json",
+    "control_log.json",
+    "metrics.json"
+  ],
+  "critical_recovery_artifact_paths": [
+    "workflow/r2r-mpc-control-board.json",
+    "controller_params.json",
+    "control_log.json",
+    "metrics.json"
+  ],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {
+    "promoter_skill": "r2r-mpc-control-scope-verifier",
+    "consumer_skill": "r2r-mpc-control-catalog-return-gate"
+  }
+}

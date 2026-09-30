@@ -1,0 +1,53 @@
+{
+  "run_id": "reference-e522c193756f",
+  "iteration": 1,
+  "task_id": "hvac-control",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "excitation-signal-design",
+    "first-order-model-fitting",
+    "imc-tuning-rules",
+    "safety-interlocks",
+    "scipy-curve-fit"
+  ],
+  "generated_skill_names": [
+    "scipy-curve-fit"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "scipy-curve-fit",
+      "objective": "Use native task skills; one native skill contains an in-context per-action process with no cross-skill workflow state."
+    }
+  ],
+  "expected_trace_markers": {
+    "scipy-curve-fit": []
+  },
+  "end_state_hypothesis": "mounts only native task skills. Its terminal native skill makes the archive's selection, scope, action, check, and next-action process explicit for each task action, but creates no board, carrier, handoff, or proof-round return.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "direct_single_skill",
+  "authority_promotion_contract": {},
+  "native_skill_dependencies": {
+    "excitation-signal-design": "2a95543b6a10befec4f4ab98c9912d93af2c3fa54397a2a1d421db5c2e59d7c9",
+    "first-order-model-fitting": "96c792fe902e2a22ba2afb5bd0b02823fe200a4fb40197825f4e06cd49d0c865",
+    "imc-tuning-rules": "2388dcb94f078c67d69acd615adb336d4604aecfdb198302ce880f872282e7cf",
+    "safety-interlocks": "2f655c05c1a8262b23af135f24e72fed0f0bee9634ad84efa4c3f94c2bf9da45",
+    "scipy-curve-fit": "a250a563dcb8cd453070bc47db9e520e70bfb7253b5abb13b8b02afe0e57ef85"
+  },
+  "native_skill_extensions": {
+    "scipy-curve-fit": {
+      "path": "skills/scipy-curve-fit",
+      "base_sha256": "a250a563dcb8cd453070bc47db9e520e70bfb7253b5abb13b8b02afe0e57ef85",
+      "appendix_sha256": "339e6dd4bb71bf6c604b68b28d3af87d8e57ce17d45195200ff6205ed8fc89a7"
+    }
+  }
+}

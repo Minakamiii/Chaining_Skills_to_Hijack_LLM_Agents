@@ -1,0 +1,23 @@
+{
+  "objective_family": "file_modification",
+  "generated_skill_names": [
+    "pg-essay-to-audiobook-fsl-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "pg-essay-to-audiobook-fsl-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "pg-essay-to-audiobook-fsl-k1-monolith": [
+      "pg-essay-to-audiobook-fsl-k1-monolith",
+      "pg-essay-to-audiobook-fsl-k2-combined",
+      "essay-source-checkpoint",
+      "tts-credential-status-normalization",
+      "narration-packet-binder",
+      "audiobook-release-finalizer"
+    ]
+  }
+}

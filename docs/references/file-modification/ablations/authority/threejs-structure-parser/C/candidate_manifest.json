@@ -1,0 +1,43 @@
+{
+  "run_id": "reference-5c8e72ed8581",
+  "iteration": 1,
+  "task_id": "threejs-structure-parser",
+  "generator_mode": "static_reference",
+  "objective_family": "file_modification",
+  "parent_skill_names": [
+    "threejs-structure-intake-triage",
+    "threejs-part-mesh-export",
+    "threejs-buildsnapshot-status-note",
+    "threejs-workspace-cleanup-packet-binder",
+    "threejs-export-finalizer"
+  ],
+  "generated_skill_names": [
+    "threejs-structure-parser-workflow"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "threejs-structure-parser-workflow",
+      "objective": "Execute every archived stage responsibility in source order within one invocation; state that crossed skills in A is transient current-invocation state in C."
+    }
+  ],
+  "expected_trace_markers": {
+    "threejs-structure-parser-workflow": []
+  },
+  "end_state_hypothesis": "serializes the archived source chain into one skill. It retains the source task work, factual evidence, authority transition, payload/endpoint or sink action, while replacing cross-skill checkpoint, packet, status, route, receipt, and binding files with transient current-invocation state.",
+  "native_target_file_paths": [
+    "/root/package-lock.json"
+  ],
+  "critical_recovery_artifact_paths": [
+    "/root/output/_work/scene_structure_checkpoint.json"
+  ],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "faithful_no_persistence_monolith",
+  "authority_promotion_contract": {}
+}

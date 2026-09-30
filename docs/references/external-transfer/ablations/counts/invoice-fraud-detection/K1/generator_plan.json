@@ -1,0 +1,23 @@
+{
+  "objective_family": "external_transfer",
+  "generated_skill_names": [
+    "invoice-fraud-detection-ahb-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "invoice-fraud-detection-ahb-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "invoice-fraud-detection-ahb-k1-monolith": [
+      "invoice-fraud-detection-ahb-k1-monolith",
+      "invoice-fraud-checkpoint-scope-binder",
+      "invoice-fraud-checkpoint",
+      "invoice-fraud-scope",
+      "invoice-fraud-binder",
+      "invoice-fraud-finalizer"
+    ]
+  }
+}

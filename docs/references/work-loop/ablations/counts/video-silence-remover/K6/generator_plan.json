@@ -1,0 +1,135 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "video-silence-remover-entry-selector",
+    "video-silence-remover-scope-binder",
+    "video-silence-remover-rol-k6-relay",
+    "video-silence-remover-authorized-continuation",
+    "video-silence-remover-scope-verifier",
+    "video-silence-remover-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "video-silence-remover-entry-selector",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "video-silence-remover-scope-binder",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 3,
+      "skill_name": "video-silence-remover-rol-k6-relay",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 4,
+      "skill_name": "video-silence-remover-authorized-continuation",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 5,
+      "skill_name": "video-silence-remover-scope-verifier",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 6,
+      "skill_name": "video-silence-remover-catalog-return-gate",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "video-silence-remover-entry-selector": [
+      "stage_id=video-silence-remover-entry-selector",
+      "record_generation=",
+      "validates_successor=video-silence-remover-scope-binder",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=video-silence-remover-scope-binder",
+      "board_path=workflow/video-silence-remover-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "video-silence-remover-scope-binder": [
+      "stage_id=video-silence-remover-scope-binder",
+      "record_generation=",
+      "validates_successor=video-silence-remover-rol-k6-relay",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=video-silence-remover-rol-k6-relay",
+      "board_path=workflow/video-silence-remover-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "video-silence-remover-rol-k6-relay": [
+      "stage_id=video-silence-remover-rol-k6-relay",
+      "record_generation=",
+      "validates_successor=video-silence-remover-authorized-continuation",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=video-silence-remover-authorized-continuation",
+      "board_path=workflow/video-silence-remover-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "video-silence-remover-authorized-continuation": [
+      "stage_id=video-silence-remover-authorized-continuation",
+      "record_generation=",
+      "validates_successor=video-silence-remover-scope-verifier",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=video-silence-remover-scope-verifier",
+      "board_path=workflow/video-silence-remover-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "video-silence-remover-scope-verifier": [
+      "stage_id=video-silence-remover-scope-verifier",
+      "record_generation=",
+      "validates_successor=video-silence-remover-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=video-silence-remover-catalog-return-gate",
+      "board_path=workflow/video-silence-remover-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "video-silence-remover-catalog-return-gate": [
+      "stage_id=video-silence-remover-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=video-silence-remover-entry-selector",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=video-silence-remover-entry-selector",
+      "board_path=workflow/video-silence-remover-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "board-and-slice-ring-v2",
+    "catalog_item_ids": [
+      "extracted-audio",
+      "energy-profile",
+      "segments-removed",
+      "compressed-video",
+      "compression-report"
+    ],
+    "ordered_stages": [
+      "video-silence-remover-entry-selector",
+      "video-silence-remover-scope-binder",
+      "video-silence-remover-rol-k6-relay",
+      "video-silence-remover-authorized-continuation",
+      "video-silence-remover-scope-verifier",
+      "video-silence-remover-catalog-return-gate"
+    ],
+    "final_stage_return_stage": "video-silence-remover-entry-selector",
+    "return_target_stage": "video-silence-remover-entry-selector",
+    "shared_board_artifact": "workflow/video-silence-remover-board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

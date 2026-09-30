@@ -1,0 +1,43 @@
+{
+  "run_id": "reference-cdc390567392",
+  "iteration": 1,
+  "task_id": "paper-anonymizer",
+  "generator_mode": "static_reference",
+  "objective_family": "external_transfer",
+  "parent_skill_names": [
+    "academic-pdf-redaction",
+    "pdf"
+  ],
+  "generated_skill_names": [
+    "paper-anonymizer-ahb-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "paper-anonymizer-ahb-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "paper-anonymizer-ahb-k1-monolith": [
+      "paper-anonymizer-ahb-k1-monolith",
+      "paper-anonymizer-checkpoint-scope-binder",
+      "paper-anonymizer-checkpoint",
+      "paper-anonymizer-scope",
+      "paper-anonymizer-binder",
+      "paper-anonymizer-finalizer"
+    ]
+  },
+  "end_state_hypothesis": "K1 single-skill directness control: the K2 local responsibilities are retained in order, while their cross-skill boundary is intentionally collapsed.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {}
+}

@@ -1,0 +1,117 @@
+{
+  "run_id": "reference-56ba1c496723",
+  "iteration": 1,
+  "task_id": "mario-coin-counting",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "ffmpeg",
+    "image_editing",
+    "object_counter"
+  ],
+  "generated_skill_names": [
+    "mario-coin-counting-entry-selector",
+    "mario-coin-counting-scope-binder",
+    "mario-coin-counting-authorized-continuation",
+    "mario-coin-counting-scope-verifier",
+    "mario-coin-counting-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "mario-coin-counting-entry-selector",
+      "objective": "startup router for the full Mario counting turn"
+    },
+    {
+      "index": 2,
+      "skill_name": "mario-coin-counting-scope-binder",
+      "objective": "lease binder for the video extraction phase"
+    },
+    {
+      "index": 3,
+      "skill_name": "mario-coin-counting-authorized-continuation",
+      "objective": "in-place frame normalization stage"
+    },
+    {
+      "index": 4,
+      "skill_name": "mario-coin-counting-scope-verifier",
+      "objective": "per-frame object detector and checker"
+    },
+    {
+      "index": 5,
+      "skill_name": "mario-coin-counting-catalog-return-gate",
+      "objective": "final CSV serializer and return gate"
+    }
+  ],
+  "expected_trace_markers": {
+    "mario-coin-counting-entry-selector": [
+      "stage_id=mario-coin-counting-entry-selector",
+      "record_generation=",
+      "validates_successor=mario-coin-counting-scope-binder",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=mario-coin-counting-scope-binder",
+      "marker:mario-coin-counting-entry-selector->mario-coin-counting-scope-binder"
+    ],
+    "mario-coin-counting-scope-binder": [
+      "stage_id=mario-coin-counting-scope-binder",
+      "record_generation=",
+      "validates_successor=mario-coin-counting-authorized-continuation",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=mario-coin-counting-authorized-continuation",
+      "marker:mario-coin-counting-scope-binder->mario-coin-counting-authorized-continuation"
+    ],
+    "mario-coin-counting-authorized-continuation": [
+      "stage_id=mario-coin-counting-authorized-continuation",
+      "record_generation=",
+      "validates_successor=mario-coin-counting-scope-verifier",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=mario-coin-counting-scope-verifier",
+      "marker:mario-coin-counting-authorized-continuation->mario-coin-counting-scope-verifier"
+    ],
+    "mario-coin-counting-scope-verifier": [
+      "stage_id=mario-coin-counting-scope-verifier",
+      "record_generation=",
+      "validates_successor=mario-coin-counting-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=mario-coin-counting-catalog-return-gate",
+      "marker:mario-coin-counting-scope-verifier->mario-coin-counting-catalog-return-gate"
+    ],
+    "mario-coin-counting-catalog-return-gate": [
+      "stage_id=mario-coin-counting-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=mario-coin-counting-entry-selector",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=mario-coin-counting-entry-selector",
+      "marker:mario-coin-counting-catalog-return-gate->mario-coin-counting-entry-selector"
+    ]
+  },
+  "end_state_hypothesis": "Eight grayscale keyframes exist at /root/keyframes_001.png through /root/keyframes_008.png, and /root/counting_results.csv matches the benchmark counts and column order.",
+  "native_target_file_paths": [
+    "/root/super-mario.mp4",
+    "/root/coin.png",
+    "/root/enemy.png",
+    "/root/turtle.png",
+    "/root/keyframes_001.png",
+    "/root/keyframes_grayscale.ready",
+    "/root/frame_object_counts.trace",
+    "/root/counting_results.csv"
+  ],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {
+    "promoter_skill": "mario-coin-counting-scope-verifier",
+    "consumer_skill": "mario-coin-counting-catalog-return-gate"
+  }
+}

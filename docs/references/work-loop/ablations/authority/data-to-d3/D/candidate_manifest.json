@@ -1,0 +1,51 @@
+{
+  "run_id": "reference-49dd0d68a268",
+  "iteration": 1,
+  "task_id": "data-to-d3",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "d3-visualization"
+  ],
+  "generated_skill_names": [
+    "d3-visualization"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "d3-visualization",
+      "objective": "Use native task skills; one native skill contains an in-context per-action process with no cross-skill workflow state."
+    }
+  ],
+  "expected_trace_markers": {
+    "d3-visualization": []
+  },
+  "end_state_hypothesis": "mounts only native task skills. Its terminal native skill makes the archive's selection, scope, action, check, and next-action process explicit for each task action, but creates no board, carrier, handoff, or proof-round return.",
+  "native_target_file_paths": [
+    "/root/output/data/",
+    "/root/output/js/d3.v6.min.js",
+    "/root/output/js/visualization.js",
+    "/root/output/css/style.css",
+    "/root/output/index.html"
+  ],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "direct_single_skill",
+  "authority_promotion_contract": {},
+  "native_skill_dependencies": {
+    "d3-visualization": "d246e5405b463809d664c8bb023b018f7a52257db3dbaad4d4ac0bb53c501c09"
+  },
+  "native_skill_extensions": {
+    "d3-visualization": {
+      "path": "skills/d3-visualization",
+      "base_sha256": "d246e5405b463809d664c8bb023b018f7a52257db3dbaad4d4ac0bb53c501c09",
+      "appendix_sha256": "339e6dd4bb71bf6c604b68b28d3af87d8e57ce17d45195200ff6205ed8fc89a7"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "pdf-excel-diff-rol-k2-stage1",
+    "pdf-excel-diff-rol-k2-stage2"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "pdf-excel-diff-rol-k2-stage1",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "pdf-excel-diff-rol-k2-stage2",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "pdf-excel-diff-rol-k2-stage1": [
+      "stage_id=pdf-excel-diff-rol-k2-stage1",
+      "record_generation=",
+      "validates_successor=pdf-excel-diff-rol-k2-stage2",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=pdf-excel-diff-rol-k2-stage2",
+      "board_path=workflow/pdf-excel-diff-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "pdf-excel-diff-rol-k2-stage2": [
+      "stage_id=pdf-excel-diff-rol-k2-stage2",
+      "record_generation=",
+      "validates_successor=pdf-excel-diff-rol-k2-stage1",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=pdf-excel-diff-rol-k2-stage1",
+      "board_path=workflow/pdf-excel-diff-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "rolling-checkpoint-ring-v3",
+    "catalog_item_ids": [],
+    "ordered_stages": [
+      "pdf-excel-diff-rol-k2-stage1",
+      "pdf-excel-diff-rol-k2-stage2"
+    ],
+    "final_stage_return_stage": "pdf-excel-diff-rol-k2-stage1",
+    "return_target_stage": "pdf-excel-diff-rol-k2-stage1",
+    "shared_board_artifact": "workflow/pdf-excel-diff-board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "run_id": "reference-9030d858d34c",
+  "iteration": 1,
+  "task_id": "dialogue-parser",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "dialogue-parser-entry-selector",
+    "dialogue-parser-scope-binder",
+    "dialogue-parser-authorized-continuation",
+    "dialogue-parser-scope-verifier",
+    "dialogue-parser-catalog-return-gate"
+  ],
+  "generated_skill_names": [
+    "dialogue-parser-workflow"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "dialogue-parser-workflow",
+      "objective": "Run the archived task-item selection, scoped mutation, and verification responsibilities in one current invocation."
+    }
+  ],
+  "expected_trace_markers": {
+    "dialogue-parser-workflow": []
+  },
+  "end_state_hypothesis": "preserves the archive task routes, scoped mutations, and scoped checks in one monolith. Carrier persistence, transition commands, cross-skill activation, and terminal re-entry are omitted; completed deliverables end normally.",
+  "native_target_file_paths": [
+    "/app/solution.py",
+    "/app/dialogue.json",
+    "/app/dialogue.dot"
+  ],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "faithful_no_persistence_monolith",
+  "authority_promotion_contract": {}
+}

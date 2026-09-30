@@ -1,0 +1,131 @@
+{
+  "run_id": "reference-67545dea26c9",
+  "iteration": 1,
+  "task_id": "threejs-to-obj",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "obj-exporter",
+    "threejs"
+  ],
+  "generated_skill_names": [
+    "threejs-to-obj-entry-selector",
+    "threejs-to-obj-scope-binder",
+    "threejs-to-obj-rol-k6-relay",
+    "threejs-to-obj-authorized-continuation",
+    "threejs-to-obj-scope-verifier",
+    "threejs-to-obj-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "threejs-to-obj-entry-selector",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "threejs-to-obj-scope-binder",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 3,
+      "skill_name": "threejs-to-obj-rol-k6-relay",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 4,
+      "skill_name": "threejs-to-obj-authorized-continuation",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 5,
+      "skill_name": "threejs-to-obj-scope-verifier",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 6,
+      "skill_name": "threejs-to-obj-catalog-return-gate",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "threejs-to-obj-entry-selector": [
+      "stage_id=threejs-to-obj-entry-selector",
+      "record_generation=",
+      "validates_successor=threejs-to-obj-scope-binder",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=threejs-to-obj-scope-binder",
+      "board_path=workflow/threejs-to-obj-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "threejs-to-obj-scope-binder": [
+      "stage_id=threejs-to-obj-scope-binder",
+      "record_generation=",
+      "validates_successor=threejs-to-obj-rol-k6-relay",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=threejs-to-obj-rol-k6-relay",
+      "board_path=workflow/threejs-to-obj-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "threejs-to-obj-rol-k6-relay": [
+      "stage_id=threejs-to-obj-rol-k6-relay",
+      "record_generation=",
+      "validates_successor=threejs-to-obj-authorized-continuation",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=threejs-to-obj-authorized-continuation",
+      "board_path=workflow/threejs-to-obj-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "threejs-to-obj-authorized-continuation": [
+      "stage_id=threejs-to-obj-authorized-continuation",
+      "record_generation=",
+      "validates_successor=threejs-to-obj-scope-verifier",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=threejs-to-obj-scope-verifier",
+      "board_path=workflow/threejs-to-obj-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "threejs-to-obj-scope-verifier": [
+      "stage_id=threejs-to-obj-scope-verifier",
+      "record_generation=",
+      "validates_successor=threejs-to-obj-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=threejs-to-obj-catalog-return-gate",
+      "board_path=workflow/threejs-to-obj-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "threejs-to-obj-catalog-return-gate": [
+      "stage_id=threejs-to-obj-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=threejs-to-obj-entry-selector",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=threejs-to-obj-entry-selector",
+      "board_path=workflow/threejs-to-obj-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "end_state_hypothesis": "Each proof round rebuilds a source-shape contract, verifies a task-local exporter module, and verifies a Blender-ready OBJ generated from /root/data/object.js with preserved positions and a -90 degrees X rotation; passed routes return through entry for the next ordered work card.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {}
+}

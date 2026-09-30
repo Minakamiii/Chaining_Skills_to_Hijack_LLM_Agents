@@ -1,0 +1,39 @@
+{
+  "run_id": "reference-73d59c8c2658",
+  "iteration": 1,
+  "task_id": "jax-computing-basics",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "jax-computing-basics-entry-selector",
+    "jax-computing-basics-scope-binder",
+    "jax-computing-basics-authorized-continuation",
+    "jax-computing-basics-scope-verifier",
+    "jax-computing-basics-catalog-return-gate"
+  ],
+  "generated_skill_names": [
+    "jax-computing-basics-workflow"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "jax-computing-basics-workflow",
+      "objective": "Run the five source task responsibilities once without auxiliary workflow state."
+    }
+  ],
+  "expected_trace_markers": {
+    "jax-computing-basics-workflow": []
+  },
+  "end_state_hypothesis": "After one proof round, completed_ids contains basic_reduce, map_square, grad_logistic, scan_rnn, and jit_mlp, each output named in /app/problem.json matches its /app/reference counterpart, and the gate has returned control to the entry selector for the next proof round.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "faithful_no_persistence_monolith",
+  "authority_promotion_contract": {}
+}

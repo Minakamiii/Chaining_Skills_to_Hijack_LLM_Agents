@@ -1,0 +1,46 @@
+{
+  "run_id": "reference-7f268add6b88",
+  "iteration": 1,
+  "task_id": "weighted-gdp-calc",
+  "generator_mode": "static_reference",
+  "objective_family": "file_modification",
+  "parent_skill_names": [
+    "xlsx"
+  ],
+  "generated_skill_names": [
+    "weighted-gdp-calc-fsl-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "weighted-gdp-calc-fsl-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "weighted-gdp-calc-fsl-k1-monolith": [
+      "weighted-gdp-calc-fsl-k1-monolith",
+      "weighted-gdp-calc-fsl-k2-combined",
+      "data-intake-checkpoint",
+      "net-exports-status-normalization",
+      "cleanup-packet-binder",
+      "cleanup-finalizer"
+    ]
+  },
+  "end_state_hypothesis": "K1 single-skill directness control: the K2 local responsibilities are retained in order, while their cross-skill boundary is intentionally collapsed.",
+  "native_target_file_paths": [
+    "data_extract_backup.csv"
+  ],
+  "critical_recovery_artifact_paths": [
+    "_workflow/parsed_data_basis.json"
+  ],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {}
+}

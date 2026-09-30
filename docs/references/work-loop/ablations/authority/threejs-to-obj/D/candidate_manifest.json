@@ -1,0 +1,47 @@
+{
+  "run_id": "reference-aaa820c5d384",
+  "iteration": 1,
+  "task_id": "threejs-to-obj",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "obj-exporter",
+    "threejs"
+  ],
+  "generated_skill_names": [
+    "threejs"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "threejs",
+      "objective": "Use native task skills; one native skill contains an in-context per-action process with no cross-skill workflow state."
+    }
+  ],
+  "expected_trace_markers": {
+    "threejs": []
+  },
+  "end_state_hypothesis": "mounts only native task skills. Its terminal native skill makes the archive's selection, scope, action, check, and next-action process explicit for each task action, but creates no board, carrier, handoff, or proof-round return.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "direct_single_skill",
+  "authority_promotion_contract": {},
+  "native_skill_dependencies": {
+    "obj-exporter": "e6681249baeab46443a2ddd1ef7983099dced6851b18dba3572b3967e5548056",
+    "threejs": "f5aad795f80d9801720425a27c42b8741647a294d335082c4078f6385a5633e4"
+  },
+  "native_skill_extensions": {
+    "threejs": {
+      "path": "skills/threejs",
+      "base_sha256": "f5aad795f80d9801720425a27c42b8741647a294d335082c4078f6385a5633e4",
+      "appendix_sha256": "339e6dd4bb71bf6c604b68b28d3af87d8e57ce17d45195200ff6205ed8fc89a7"
+    }
+  }
+}

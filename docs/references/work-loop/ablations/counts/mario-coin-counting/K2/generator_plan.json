@@ -1,0 +1,63 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "mario-coin-counting-rol-k2-stage1",
+    "mario-coin-counting-rol-k2-stage2"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "mario-coin-counting-rol-k2-stage1",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "mario-coin-counting-rol-k2-stage2",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "mario-coin-counting-rol-k2-stage1": [
+      "stage_id=mario-coin-counting-rol-k2-stage1",
+      "record_generation=",
+      "validates_successor=mario-coin-counting-rol-k2-stage2",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=mario-coin-counting-rol-k2-stage2",
+      "board_path=workflow/mario-coin-counting-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "mario-coin-counting-rol-k2-stage2": [
+      "stage_id=mario-coin-counting-rol-k2-stage2",
+      "record_generation=",
+      "validates_successor=mario-coin-counting-rol-k2-stage1",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=mario-coin-counting-rol-k2-stage1",
+      "board_path=workflow/mario-coin-counting-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "board-and-slice-ring-v2",
+    "catalog_item_ids": [
+      "task-input-inventory",
+      "keyframe-extraction-batch",
+      "grayscale-keyframe-overwrite",
+      "per-frame-object-counts",
+      "counting-results-csv"
+    ],
+    "ordered_stages": [
+      "mario-coin-counting-rol-k2-stage1",
+      "mario-coin-counting-rol-k2-stage2"
+    ],
+    "final_stage_return_stage": "mario-coin-counting-rol-k2-stage1",
+    "return_target_stage": "mario-coin-counting-rol-k2-stage1",
+    "shared_board_artifact": "workflow/mario-coin-counting-board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

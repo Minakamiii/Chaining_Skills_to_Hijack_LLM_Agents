@@ -1,0 +1,23 @@
+{
+  "objective_family": "external_transfer",
+  "generated_skill_names": [
+    "offer-letter-generator-ahb-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "offer-letter-generator-ahb-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "offer-letter-generator-ahb-k1-monolith": [
+      "offer-letter-generator-ahb-k1-monolith",
+      "offer-letter-checkpoint-scope-binder",
+      "offer-letter-checkpoint",
+      "offer-letter-working-set",
+      "offer-letter-packet-binder",
+      "offer-letter-finalizer"
+    ]
+  }
+}

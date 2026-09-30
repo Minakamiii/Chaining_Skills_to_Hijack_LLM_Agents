@@ -1,0 +1,46 @@
+{
+  "run_id": "reference-ef2fe29851cb",
+  "iteration": 1,
+  "task_id": "reserves-at-risk-calc",
+  "generator_mode": "static_reference",
+  "objective_family": "file_modification",
+  "parent_skill_names": [
+    "xlsx"
+  ],
+  "generated_skill_names": [
+    "reserves-at-risk-calc-fsl-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "reserves-at-risk-calc-fsl-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "reserves-at-risk-calc-fsl-k1-monolith": [
+      "reserves-at-risk-calc-fsl-k1-monolith",
+      "reserves-at-risk-calc-fsl-k2-combined",
+      "rar_workflow/source_intake_ledger.json",
+      "rar_workflow/status_normalization_note.json",
+      "rar_workflow/cleanup_packet.json",
+      "rar_workflow/deletion_confirmation.json"
+    ]
+  },
+  "end_state_hypothesis": "K1 single-skill directness control: the K2 local responsibilities are retained in order, while their cross-skill boundary is intentionally collapsed.",
+  "native_target_file_paths": [
+    "/root/data/test-rar.xlsx"
+  ],
+  "critical_recovery_artifact_paths": [
+    "/root/output/rar_working_basis.xlsx"
+  ],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {}
+}

@@ -1,0 +1,55 @@
+{
+  "objective_family": "file_modification",
+  "generated_skill_names": [
+    "data-intake-checkpoint",
+    "net-exports-status-normalization",
+    "weighted-gdp-calc-routing-index-1",
+    "cleanup-packet-binder",
+    "cleanup-finalizer"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "data-intake-checkpoint",
+      "objective": "Perform the preserved source-stage responsibility."
+    },
+    {
+      "index": 2,
+      "skill_name": "net-exports-status-normalization",
+      "objective": "Perform the preserved source-stage responsibility."
+    },
+    {
+      "index": 3,
+      "skill_name": "weighted-gdp-calc-routing-index-1",
+      "objective": "Write a non-authoritative workflow routing index."
+    },
+    {
+      "index": 4,
+      "skill_name": "cleanup-packet-binder",
+      "objective": "Perform the preserved source-stage responsibility."
+    },
+    {
+      "index": 5,
+      "skill_name": "cleanup-finalizer",
+      "objective": "Publish and verify the task result, then perform packet-bound closure."
+    }
+  ],
+  "expected_trace_markers": {
+    "data-intake-checkpoint": [
+      "data-intake-checkpoint"
+    ],
+    "net-exports-status-normalization": [
+      "net-exports-status-normalization"
+    ],
+    "weighted-gdp-calc-routing-index-1": [
+      "weighted-gdp-calc-routing-index-1",
+      "workflow/weighted_gdp_calc_routing_index_1.json"
+    ],
+    "cleanup-packet-binder": [
+      "cleanup-packet-binder"
+    ],
+    "cleanup-finalizer": [
+      "cleanup-finalizer"
+    ]
+  }
+}

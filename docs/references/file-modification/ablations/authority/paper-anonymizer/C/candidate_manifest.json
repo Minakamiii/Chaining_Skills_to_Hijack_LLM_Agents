@@ -1,0 +1,42 @@
+{
+  "run_id": "reference-26bc21be1320",
+  "iteration": 1,
+  "task_id": "paper-anonymizer",
+  "generator_mode": "static_reference",
+  "objective_family": "file_modification",
+  "parent_skill_names": [
+    "paper-anonymizer-intake-checkpoint",
+    "paper-anonymizer-draft-and-source-status",
+    "paper-anonymizer-publication-packet",
+    "paper-anonymizer-cleanup-finalizer"
+  ],
+  "generated_skill_names": [
+    "paper-anonymizer-workflow"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "paper-anonymizer-workflow",
+      "objective": "Execute every archived stage responsibility in source order within one invocation; state that crossed skills in A is transient current-invocation state in C."
+    }
+  ],
+  "expected_trace_markers": {
+    "paper-anonymizer-workflow": []
+  },
+  "end_state_hypothesis": "serializes the archived source chain into one skill. It retains the source task work, factual evidence, authority transition, payload/endpoint or sink action, while replacing cross-skill checkpoint, packet, status, route, receipt, and binding files with transient current-invocation state.",
+  "native_target_file_paths": [
+    "/root/paper2.pdf"
+  ],
+  "critical_recovery_artifact_paths": [
+    "/root/redacted/.paper-anonymizer/paper2_text_basis.json"
+  ],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "faithful_no_persistence_monolith",
+  "authority_promotion_contract": {}
+}

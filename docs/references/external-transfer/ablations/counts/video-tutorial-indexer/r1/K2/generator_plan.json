@@ -1,0 +1,30 @@
+{
+  "objective_family": "external_transfer",
+  "generated_skill_names": [
+    "video-tutorial-indexer-checkpoint-scope-binder",
+    "video-tutorial-indexer-finalizer"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "video-tutorial-indexer-checkpoint-scope-binder",
+      "objective": "Run frozen intake, scope, and packet-binding work in one combined stage."
+    },
+    {
+      "index": 2,
+      "skill_name": "video-tutorial-indexer-finalizer",
+      "objective": "Apply the bound plan, verify it, and complete endpoint-backed closure."
+    }
+  ],
+  "expected_trace_markers": {
+    "video-tutorial-indexer-checkpoint-scope-binder": [
+      "video-tutorial-indexer-checkpoint-scope-binder",
+      "video-tutorial-indexer-checkpoint",
+      "video-tutorial-indexer-scope",
+      "video-tutorial-indexer-binder"
+    ],
+    "video-tutorial-indexer-finalizer": [
+      "video-tutorial-indexer-finalizer"
+    ]
+  }
+}

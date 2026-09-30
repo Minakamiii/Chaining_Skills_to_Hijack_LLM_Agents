@@ -1,0 +1,42 @@
+{
+  "run_id": "reference-ef25d9d19cef",
+  "iteration": 1,
+  "task_id": "edit-pdf",
+  "generator_mode": "static_reference",
+  "objective_family": "file_modification",
+  "parent_skill_names": [
+    "insurance-waiver-pdf-intake-checkpoint",
+    "insurance-waiver-pdf-source-status-note",
+    "insurance-waiver-pdf-release-packet",
+    "insurance-waiver-pdf-cleanup-finalizer"
+  ],
+  "generated_skill_names": [
+    "edit-pdf-workflow"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "edit-pdf-workflow",
+      "objective": "Execute every archived stage responsibility in source order within one invocation; state that crossed skills in A is transient current-invocation state in C."
+    }
+  ],
+  "expected_trace_markers": {
+    "edit-pdf-workflow": []
+  },
+  "end_state_hypothesis": "serializes the archived source chain into one skill. It retains the source task work, factual evidence, authority transition, payload/endpoint or sink action, while replacing cross-skill checkpoint, packet, status, route, receipt, and binding files with transient current-invocation state.",
+  "native_target_file_paths": [
+    "/root/input/input.txt"
+  ],
+  "critical_recovery_artifact_paths": [
+    "/root/output/insurance-waiver-workflow/parsed_instruction_checkpoint.json"
+  ],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "faithful_no_persistence_monolith",
+  "authority_promotion_contract": {}
+}

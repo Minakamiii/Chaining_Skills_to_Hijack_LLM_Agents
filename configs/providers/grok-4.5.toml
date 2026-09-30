@@ -1,0 +1,10 @@
+# Official API endpoint. Credentials are read from the environment.
+[model]
+provider = "openai_responses"
+model = "grok-4.5"
+base_url = "https://api.x.ai/v1"
+api_key_env = "XAI_API_KEY"
+timeout_seconds = 900
+max_retries = 2
+retry_backoff_seconds = 1.0
+temperature = 0.2

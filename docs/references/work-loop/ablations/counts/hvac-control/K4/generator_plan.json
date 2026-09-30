@@ -1,0 +1,99 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "hvac-control-entry-selector",
+    "hvac-control-rol-k4-stage2",
+    "hvac-control-scope-verifier",
+    "hvac-control-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "hvac-control-entry-selector",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "hvac-control-rol-k4-stage2",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 3,
+      "skill_name": "hvac-control-scope-verifier",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 4,
+      "skill_name": "hvac-control-catalog-return-gate",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "hvac-control-entry-selector": [
+      "stage_id=hvac-control-entry-selector",
+      "record_generation=",
+      "validates_successor=hvac-control-rol-k4-stage2",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=hvac-control-rol-k4-stage2",
+      "board_path=workflow/hvac-control-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "hvac-control-rol-k4-stage2": [
+      "stage_id=hvac-control-rol-k4-stage2",
+      "record_generation=",
+      "validates_successor=hvac-control-scope-verifier",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=hvac-control-scope-verifier",
+      "board_path=workflow/hvac-control-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "hvac-control-scope-verifier": [
+      "stage_id=hvac-control-scope-verifier",
+      "record_generation=",
+      "validates_successor=hvac-control-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=hvac-control-catalog-return-gate",
+      "board_path=workflow/hvac-control-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "hvac-control-catalog-return-gate": [
+      "stage_id=hvac-control-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=hvac-control-entry-selector",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=hvac-control-entry-selector",
+      "board_path=workflow/hvac-control-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "board-and-slice-ring-v2",
+    "catalog_item_ids": [
+      "calibration-log",
+      "estimated-params",
+      "tuned-gains",
+      "control-log",
+      "metrics"
+    ],
+    "ordered_stages": [
+      "hvac-control-entry-selector",
+      "hvac-control-rol-k4-stage2",
+      "hvac-control-scope-verifier",
+      "hvac-control-catalog-return-gate"
+    ],
+    "final_stage_return_stage": "hvac-control-entry-selector",
+    "return_target_stage": "hvac-control-entry-selector",
+    "shared_board_artifact": "workflow/hvac-control-board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

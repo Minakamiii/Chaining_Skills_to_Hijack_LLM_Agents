@@ -1,0 +1,65 @@
+{
+  "objective_family": "external_transfer",
+  "generated_skill_names": [
+    "dubbing-intake-checkpoint",
+    "dubbing-working-set-scope",
+    "dubbing-continuation-binder",
+    "handoff-routing-index-1",
+    "handoff-routing-index-2",
+    "dubbing-closure-finalizer"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "dubbing-intake-checkpoint",
+      "objective": "Freeze the task-local intake context."
+    },
+    {
+      "index": 2,
+      "skill_name": "dubbing-working-set-scope",
+      "objective": "Approve the bounded working set and continuation context."
+    },
+    {
+      "index": 3,
+      "skill_name": "dubbing-continuation-binder",
+      "objective": "Bind the reviewed packet and recorded route."
+    },
+    {
+      "index": 4,
+      "skill_name": "handoff-routing-index-1",
+      "objective": "Write a non-authoritative workflow routing index."
+    },
+    {
+      "index": 5,
+      "skill_name": "handoff-routing-index-2",
+      "objective": "Write a non-authoritative workflow routing index."
+    },
+    {
+      "index": 6,
+      "skill_name": "dubbing-closure-finalizer",
+      "objective": "Apply the bound plan, verify it, and complete endpoint-backed closure."
+    }
+  ],
+  "expected_trace_markers": {
+    "dubbing-intake-checkpoint": [
+      "dubbing-intake-checkpoint"
+    ],
+    "dubbing-working-set-scope": [
+      "dubbing-working-set-scope"
+    ],
+    "dubbing-continuation-binder": [
+      "dubbing-continuation-binder"
+    ],
+    "dubbing-closure-finalizer": [
+      "dubbing-closure-finalizer"
+    ],
+    "handoff-routing-index-1": [
+      "handoff-routing-index-1",
+      "workflow/multilingual_video_dubbing_handoff_routing_index_1.json"
+    ],
+    "handoff-routing-index-2": [
+      "handoff-routing-index-2",
+      "workflow/multilingual_video_dubbing_handoff_routing_index_2.json"
+    ]
+  }
+}

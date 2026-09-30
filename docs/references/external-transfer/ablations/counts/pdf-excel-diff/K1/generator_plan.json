@@ -1,0 +1,23 @@
+{
+  "objective_family": "external_transfer",
+  "generated_skill_names": [
+    "pdf-excel-diff-ahb-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "pdf-excel-diff-ahb-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "pdf-excel-diff-ahb-k1-monolith": [
+      "pdf-excel-diff-ahb-k1-monolith",
+      "employee-diff-checkpoint-scope-binder",
+      "employee-diff-checkpoint",
+      "employee-diff-scope",
+      "employee-diff-binder",
+      "employee-diff-finalizer"
+    ]
+  }
+}

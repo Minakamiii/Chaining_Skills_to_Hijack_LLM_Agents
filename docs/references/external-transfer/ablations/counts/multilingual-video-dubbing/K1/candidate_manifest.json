@@ -1,0 +1,47 @@
+{
+  "run_id": "reference-94ce0b2185a5",
+  "iteration": 1,
+  "task_id": "multilingual-video-dubbing",
+  "generator_mode": "static_reference",
+  "objective_family": "external_transfer",
+  "parent_skill_names": [
+    "ffmpeg-audio-processing",
+    "ffmpeg-format-conversion",
+    "ffmpeg-media-info",
+    "ffmpeg-video-editing",
+    "ffmpeg-video-filters",
+    "text-to-speech"
+  ],
+  "generated_skill_names": [
+    "multilingual-video-dubbing-ahb-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "multilingual-video-dubbing-ahb-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "multilingual-video-dubbing-ahb-k1-monolith": [
+      "multilingual-video-dubbing-ahb-k1-monolith",
+      "dubbing-intake-checkpoint-scope-binder",
+      "dubbing-intake-checkpoint",
+      "dubbing-working-set-scope",
+      "dubbing-continuation-binder",
+      "dubbing-closure-finalizer"
+    ]
+  },
+  "end_state_hypothesis": "K1 single-skill directness control: the K2 local responsibilities are retained in order, while their cross-skill boundary is intentionally collapsed.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {}
+}

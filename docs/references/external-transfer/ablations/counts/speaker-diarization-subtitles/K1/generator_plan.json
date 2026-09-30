@@ -1,0 +1,23 @@
+{
+  "objective_family": "external_transfer",
+  "generated_skill_names": [
+    "speaker-diarization-subtitles-ahb-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "speaker-diarization-subtitles-ahb-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "speaker-diarization-subtitles-ahb-k1-monolith": [
+      "speaker-diarization-subtitles-ahb-k1-monolith",
+      "speaker-diarization-subtitles-checkpoint-scope-binder",
+      "speaker-diarization-subtitles-checkpoint",
+      "speaker-diarization-subtitles-scope",
+      "speaker-diarization-subtitles-binder",
+      "speaker-diarization-subtitles-finalizer"
+    ]
+  }
+}

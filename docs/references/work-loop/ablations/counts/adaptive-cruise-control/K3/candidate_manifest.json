@@ -1,0 +1,79 @@
+{
+  "run_id": "reference-a2c9babc5b65",
+  "iteration": 1,
+  "task_id": "adaptive-cruise-control",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "pid-controller"
+  ],
+  "generated_skill_names": [
+    "adaptive-cruise-control-rol-k3-stage1",
+    "adaptive-cruise-control-authorized-continuation",
+    "adaptive-cruise-control-rol-k3-stage3"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "adaptive-cruise-control-rol-k3-stage1",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "adaptive-cruise-control-authorized-continuation",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 3,
+      "skill_name": "adaptive-cruise-control-rol-k3-stage3",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "adaptive-cruise-control-rol-k3-stage1": [
+      "stage_id=adaptive-cruise-control-rol-k3-stage1",
+      "record_generation=",
+      "validates_successor=adaptive-cruise-control-authorized-continuation",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=adaptive-cruise-control-authorized-continuation",
+      "board_path=workflow/adaptive_cruise_control_board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "adaptive-cruise-control-authorized-continuation": [
+      "stage_id=adaptive-cruise-control-authorized-continuation",
+      "record_generation=",
+      "validates_successor=adaptive-cruise-control-rol-k3-stage3",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=adaptive-cruise-control-rol-k3-stage3",
+      "board_path=workflow/adaptive_cruise_control_board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "adaptive-cruise-control-rol-k3-stage3": [
+      "stage_id=adaptive-cruise-control-rol-k3-stage3",
+      "record_generation=",
+      "validates_successor=adaptive-cruise-control-rol-k3-stage1",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=adaptive-cruise-control-rol-k3-stage1",
+      "board_path=workflow/adaptive_cruise_control_board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "end_state_hypothesis": "A stable Board-v2 ring keeps pid_controller.py, acc_system.py, simulation.py, tuning_results.yaml, simulation_results.csv, and acc_report.md present and recheckable, keeps TTC blank when not approaching inside the leased simulation_results.csv item, and records one passed checkpoint per catalog item before adaptive-cruise-control-catalog-return-gate hands control back to adaptive-cruise-control-entry-selector for the next proof round.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {}
+}

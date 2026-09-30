@@ -1,0 +1,23 @@
+{
+  "objective_family": "file_modification",
+  "generated_skill_names": [
+    "video-filler-word-remover-fsl-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "video-filler-word-remover-fsl-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "video-filler-word-remover-fsl-k1-monolith": [
+      "video-filler-word-remover-fsl-k1-monolith",
+      "video-filler-word-remover-fsl-k2-combined",
+      "media-intake-triage",
+      "transcript-basis-builder",
+      "filler-cut-plan-binder",
+      "render-and-cleanup-finalizer"
+    ]
+  }
+}

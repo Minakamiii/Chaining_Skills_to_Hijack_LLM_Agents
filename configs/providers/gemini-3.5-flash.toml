@@ -1,0 +1,10 @@
+# Official API endpoint. Credentials are read from the environment.
+[model]
+provider = "openai_compatible"
+model = "gemini-3.5-flash"
+base_url = "https://generativelanguage.googleapis.com/v1beta/openai"
+api_key_env = "GEMINI_API_KEY"
+timeout_seconds = 300
+max_retries = 2
+retry_backoff_seconds = 1.0
+temperature = 0.2

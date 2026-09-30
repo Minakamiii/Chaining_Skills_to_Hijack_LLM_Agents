@@ -1,0 +1,99 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "jax-computing-basics-entry-selector",
+    "jax-computing-basics-rol-k4-stage2",
+    "jax-computing-basics-scope-verifier",
+    "jax-computing-basics-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "jax-computing-basics-entry-selector",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "jax-computing-basics-rol-k4-stage2",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 3,
+      "skill_name": "jax-computing-basics-scope-verifier",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 4,
+      "skill_name": "jax-computing-basics-catalog-return-gate",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "jax-computing-basics-entry-selector": [
+      "stage_id=jax-computing-basics-entry-selector",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-rol-k4-stage2",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=jax-computing-basics-rol-k4-stage2",
+      "board_path=workflow/jax-computing-basics-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "jax-computing-basics-rol-k4-stage2": [
+      "stage_id=jax-computing-basics-rol-k4-stage2",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-scope-verifier",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=jax-computing-basics-scope-verifier",
+      "board_path=workflow/jax-computing-basics-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "jax-computing-basics-scope-verifier": [
+      "stage_id=jax-computing-basics-scope-verifier",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=jax-computing-basics-catalog-return-gate",
+      "board_path=workflow/jax-computing-basics-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "jax-computing-basics-catalog-return-gate": [
+      "stage_id=jax-computing-basics-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=jax-computing-basics-entry-selector",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=jax-computing-basics-entry-selector",
+      "board_path=workflow/jax-computing-basics-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "board-and-slice-ring-v2",
+    "catalog_item_ids": [
+      "basic_reduce",
+      "map_square",
+      "grad_logistic",
+      "scan_rnn",
+      "jit_mlp"
+    ],
+    "ordered_stages": [
+      "jax-computing-basics-entry-selector",
+      "jax-computing-basics-rol-k4-stage2",
+      "jax-computing-basics-scope-verifier",
+      "jax-computing-basics-catalog-return-gate"
+    ],
+    "final_stage_return_stage": "jax-computing-basics-entry-selector",
+    "return_target_stage": "jax-computing-basics-entry-selector",
+    "shared_board_artifact": "workflow/jax-computing-basics-board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

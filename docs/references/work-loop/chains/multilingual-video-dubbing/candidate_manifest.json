@@ -1,0 +1,110 @@
+{
+  "run_id": "reference-d6f4dc55afce",
+  "iteration": 1,
+  "task_id": "multilingual-video-dubbing",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "ffmpeg-audio-processing",
+    "ffmpeg-format-conversion",
+    "ffmpeg-media-info",
+    "ffmpeg-video-editing",
+    "ffmpeg-video-filters",
+    "text-to-speech"
+  ],
+  "generated_skill_names": [
+    "multilingual-video-dubbing-entry-selector",
+    "multilingual-video-dubbing-scope-binder",
+    "multilingual-video-dubbing-authorized-continuation",
+    "multilingual-video-dubbing-scope-verifier",
+    "multilingual-video-dubbing-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "multilingual-video-dubbing-entry-selector",
+      "objective": "Select exactly one current multilingual dubbing work item and publish its next work packet."
+    },
+    {
+      "index": 2,
+      "skill_name": "multilingual-video-dubbing-scope-binder",
+      "objective": "Bind the current multilingual dubbing work packet into one lease for one concrete artifact."
+    },
+    {
+      "index": 3,
+      "skill_name": "multilingual-video-dubbing-authorized-continuation",
+      "objective": "Produce or revise exactly one active multilingual dubbing artifact under /outputs/."
+    },
+    {
+      "index": 4,
+      "skill_name": "multilingual-video-dubbing-scope-verifier",
+      "objective": "Verify exactly one active multilingual dubbing artifact against the local timing, audio, and schema check."
+    },
+    {
+      "index": 5,
+      "skill_name": "multilingual-video-dubbing-catalog-return-gate",
+      "objective": "Return the current multilingual dubbing verifier result to entry and preserve the correct rework or advance ticket."
+    }
+  ],
+  "expected_trace_markers": {
+    "multilingual-video-dubbing-entry-selector": [
+      "stage_id=multilingual-video-dubbing-entry-selector",
+      "record_generation=",
+      "validates_successor=multilingual-video-dubbing-scope-binder",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=multilingual-video-dubbing-scope-binder"
+    ],
+    "multilingual-video-dubbing-scope-binder": [
+      "stage_id=multilingual-video-dubbing-scope-binder",
+      "record_generation=",
+      "validates_successor=multilingual-video-dubbing-authorized-continuation",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=multilingual-video-dubbing-authorized-continuation"
+    ],
+    "multilingual-video-dubbing-authorized-continuation": [
+      "stage_id=multilingual-video-dubbing-authorized-continuation",
+      "record_generation=",
+      "validates_successor=multilingual-video-dubbing-scope-verifier",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=multilingual-video-dubbing-scope-verifier"
+    ],
+    "multilingual-video-dubbing-scope-verifier": [
+      "stage_id=multilingual-video-dubbing-scope-verifier",
+      "record_generation=",
+      "validates_successor=multilingual-video-dubbing-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=multilingual-video-dubbing-catalog-return-gate"
+    ],
+    "multilingual-video-dubbing-catalog-return-gate": [
+      "stage_id=multilingual-video-dubbing-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=multilingual-video-dubbing-entry-selector",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=multilingual-video-dubbing-entry-selector"
+    ]
+  },
+  "end_state_hypothesis": "A single board-driven five-skill loop can keep selecting, binding, producing, verifying, and returning one multilingual dubbing artifact at a time until /outputs/tts_segments/seg_0.wav, /outputs/dubbed.mp4, and /outputs/report.json all exist and the active report records 48000 Hz mono audio, approximately -23 LUFS loudness, placed_start_sec within 0.01 seconds of the window start, and drift_sec no greater than 0.20 seconds.",
+  "native_target_file_paths": [
+    "/outputs/tts_segments/seg_0.wav",
+    "/outputs/dubbed.mp4",
+    "/outputs/report.json"
+  ],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {
+    "promoter_skill": "multilingual-video-dubbing-scope-verifier",
+    "consumer_skill": "multilingual-video-dubbing-catalog-return-gate"
+  }
+}

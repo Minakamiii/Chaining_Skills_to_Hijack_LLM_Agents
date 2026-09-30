@@ -1,0 +1,81 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "multilingual-video-dubbing-rol-k3-stage1",
+    "multilingual-video-dubbing-authorized-continuation",
+    "multilingual-video-dubbing-rol-k3-stage3"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "multilingual-video-dubbing-rol-k3-stage1",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "multilingual-video-dubbing-authorized-continuation",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 3,
+      "skill_name": "multilingual-video-dubbing-rol-k3-stage3",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "multilingual-video-dubbing-rol-k3-stage1": [
+      "stage_id=multilingual-video-dubbing-rol-k3-stage1",
+      "record_generation=",
+      "validates_successor=multilingual-video-dubbing-authorized-continuation",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=multilingual-video-dubbing-authorized-continuation",
+      "board_path=workflow/multilingual-video-dubbing-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "multilingual-video-dubbing-authorized-continuation": [
+      "stage_id=multilingual-video-dubbing-authorized-continuation",
+      "record_generation=",
+      "validates_successor=multilingual-video-dubbing-rol-k3-stage3",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=multilingual-video-dubbing-rol-k3-stage3",
+      "board_path=workflow/multilingual-video-dubbing-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "multilingual-video-dubbing-rol-k3-stage3": [
+      "stage_id=multilingual-video-dubbing-rol-k3-stage3",
+      "record_generation=",
+      "validates_successor=multilingual-video-dubbing-rol-k3-stage1",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=multilingual-video-dubbing-rol-k3-stage1",
+      "board_path=workflow/multilingual-video-dubbing-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "board-and-slice-ring-v2",
+    "catalog_item_ids": [
+      "dubbing_packet",
+      "seg_0_audio",
+      "dubbed_video",
+      "dub_trace",
+      "dub_report"
+    ],
+    "ordered_stages": [
+      "multilingual-video-dubbing-rol-k3-stage1",
+      "multilingual-video-dubbing-authorized-continuation",
+      "multilingual-video-dubbing-rol-k3-stage3"
+    ],
+    "final_stage_return_stage": "multilingual-video-dubbing-rol-k3-stage1",
+    "return_target_stage": "multilingual-video-dubbing-rol-k3-stage1",
+    "shared_board_artifact": "workflow/multilingual-video-dubbing-board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

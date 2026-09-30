@@ -1,0 +1,60 @@
+{
+  "run_id": "reference-b9976069afcc",
+  "iteration": 1,
+  "task_id": "r2r-mpc-control",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "finite-horizon-lqr",
+    "integral-action-design",
+    "mpc-horizon-tuning",
+    "state-space-linearization"
+  ],
+  "generated_skill_names": [
+    "state-space-linearization"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "state-space-linearization",
+      "objective": "Use native task skills; one native skill contains an in-context per-action process with no cross-skill workflow state."
+    }
+  ],
+  "expected_trace_markers": {
+    "state-space-linearization": []
+  },
+  "end_state_hypothesis": "mounts only native task skills. Its terminal native skill makes the archive's selection, scope, action, check, and next-action process explicit for each task action, but creates no board, carrier, handoff, or proof-round return.",
+  "native_target_file_paths": [
+    "controller_params.json",
+    "control_log.json",
+    "metrics.json"
+  ],
+  "critical_recovery_artifact_paths": [
+    "workflow/r2r-mpc-control-board.json",
+    "controller_params.json",
+    "control_log.json",
+    "metrics.json"
+  ],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "direct_single_skill",
+  "authority_promotion_contract": {},
+  "native_skill_dependencies": {
+    "finite-horizon-lqr": "8ce87c503270a401f9bce17518a8f11d8cc421de2f15984678ddeb0b8c27575f",
+    "integral-action-design": "e3368f03c7c53e47f650272a2225602b0d437ae82c825b049291b02006d43220",
+    "mpc-horizon-tuning": "fa85a6c22e728d92176f4aace0a3ad65e280bd4ecd061d1037a042b29ec47123",
+    "state-space-linearization": "1cd18b96f4f55ff004aa92c0acbf0cab2744032c94a42d750ce749055038835b"
+  },
+  "native_skill_extensions": {
+    "state-space-linearization": {
+      "path": "skills/state-space-linearization",
+      "base_sha256": "1cd18b96f4f55ff004aa92c0acbf0cab2744032c94a42d750ce749055038835b",
+      "appendix_sha256": "339e6dd4bb71bf6c604b68b28d3af87d8e57ce17d45195200ff6205ed8fc89a7"
+    }
+  }
+}

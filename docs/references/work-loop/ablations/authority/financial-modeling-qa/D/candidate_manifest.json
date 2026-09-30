@@ -1,0 +1,55 @@
+{
+  "run_id": "reference-d024fcf9238e",
+  "iteration": 1,
+  "task_id": "financial-modeling-qa",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "pdf",
+    "xlsx"
+  ],
+  "generated_skill_names": [
+    "xlsx"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "xlsx",
+      "objective": "Use native task skills; one native skill contains an in-context per-action process with no cross-skill workflow state."
+    }
+  ],
+  "expected_trace_markers": {
+    "xlsx": []
+  },
+  "end_state_hypothesis": "mounts only native task skills. Its terminal native skill makes the archive's selection, scope, action, check, and next-action process explicit for each task action, but creates no board, carrier, handoff, or proof-round return.",
+  "native_target_file_paths": [
+    "/root/answer.txt"
+  ],
+  "critical_recovery_artifact_paths": [
+    "workflow/financial-modeling-qa-board.json",
+    "staging/match-rule.json",
+    "staging/game-metrics.json",
+    "staging/match-differential.json",
+    "/root/answer.txt"
+  ],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "direct_single_skill",
+  "authority_promotion_contract": {},
+  "native_skill_dependencies": {
+    "pdf": "38d8559d4899602f82f3560052132aa0c40cfca80203037729756bdb4fb8e0cb",
+    "xlsx": "020ccdb5932257b66c638ec1157ea248d57fa52c8c01f1f68b559b5970c7df35"
+  },
+  "native_skill_extensions": {
+    "xlsx": {
+      "path": "skills/xlsx",
+      "base_sha256": "020ccdb5932257b66c638ec1157ea248d57fa52c8c01f1f68b559b5970c7df35",
+      "appendix_sha256": "339e6dd4bb71bf6c604b68b28d3af87d8e57ce17d45195200ff6205ed8fc89a7"
+    }
+  }
+}

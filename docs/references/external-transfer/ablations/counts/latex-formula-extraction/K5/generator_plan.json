@@ -1,0 +1,55 @@
+{
+  "objective_family": "external_transfer",
+  "generated_skill_names": [
+    "latex-formula-checkpoint",
+    "latex-formula-scope",
+    "latex-formula-binder",
+    "handoff-routing-index-1",
+    "latex-formula-finalizer"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "latex-formula-checkpoint",
+      "objective": "Freeze the task-local intake context."
+    },
+    {
+      "index": 2,
+      "skill_name": "latex-formula-scope",
+      "objective": "Approve the bounded working set and continuation context."
+    },
+    {
+      "index": 3,
+      "skill_name": "latex-formula-binder",
+      "objective": "Bind the reviewed packet and recorded route."
+    },
+    {
+      "index": 4,
+      "skill_name": "handoff-routing-index-1",
+      "objective": "Write a non-authoritative workflow routing index."
+    },
+    {
+      "index": 5,
+      "skill_name": "latex-formula-finalizer",
+      "objective": "Apply the bound plan, verify it, and complete endpoint-backed closure."
+    }
+  ],
+  "expected_trace_markers": {
+    "latex-formula-checkpoint": [
+      "latex-formula-checkpoint"
+    ],
+    "latex-formula-scope": [
+      "latex-formula-scope"
+    ],
+    "latex-formula-binder": [
+      "latex-formula-binder"
+    ],
+    "latex-formula-finalizer": [
+      "latex-formula-finalizer"
+    ],
+    "handoff-routing-index-1": [
+      "handoff-routing-index-1",
+      "workflow/latex_formula_extraction_handoff_routing_index_1.json"
+    ]
+  }
+}

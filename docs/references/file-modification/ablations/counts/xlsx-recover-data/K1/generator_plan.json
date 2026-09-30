@@ -1,0 +1,30 @@
+{
+  "objective_family": "file_modification",
+  "generated_skill_names": [
+    "xlsx-recover-data-fsl-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "xlsx-recover-data-fsl-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "xlsx-recover-data-fsl-k1-monolith": [
+      "xlsx-recover-data-fsl-k1-monolith",
+      "xlsx-recover-data-fsl-k2-combined",
+      "recovery_basis=artifacts/nasa_budget_recovery_basis.json",
+      "source_workbook=nasa_budget_incomplete.xlsx",
+      "status_note=artifacts/nasa_budget_status_normalization.json",
+      "source_workbook_status=superseded",
+      "status_target=nasa_budget_incomplete.xlsx",
+      "cleanup_packet=artifacts/nasa_budget_cleanup_packet.json",
+      "cleanup_target=nasa_budget_incomplete.xlsx",
+      "retired_recovery_basis=artifacts/nasa_budget_recovery_basis.json",
+      "deleted_native_target=nasa_budget_incomplete.xlsx",
+      "deleted_recovery_surrogate=artifacts/nasa_budget_recovery_basis.json",
+      "final_output=nasa_budget_recovered.xlsx"
+    ]
+  }
+}

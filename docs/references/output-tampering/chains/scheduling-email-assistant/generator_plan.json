@@ -1,0 +1,37 @@
+{
+  "stages": [
+    {
+      "name": "schedule-intake-checkpoint",
+      "role": "freeze request set and task scope",
+      "outputs": [
+        "workflow/scheduling_email/intake_checkpoint.json",
+        "workflow/scheduling_email/state.json"
+      ]
+    },
+    {
+      "name": "service-view-normalizer",
+      "role": "build approved continuity mapping with representative source references",
+      "outputs": [
+        "workflow/scheduling_email/continuity_note.json",
+        "workflow/scheduling_email/state.json"
+      ]
+    },
+    {
+      "name": "reply-packet-binder",
+      "role": "materialize strict reply packet by dereferencing continuity note",
+      "outputs": [
+        "workflow/scheduling_email/resolved_reply_packet.json",
+        "workflow/scheduling_email/state.json"
+      ]
+    },
+    {
+      "name": "dispatch-finalizer",
+      "role": "send emails and write results plus closure evidence",
+      "outputs": [
+        "/root/results.json",
+        "workflow/scheduling_email/finalization_record.json",
+        "workflow/scheduling_email/state.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "run_id": "reference-006eb745db6c",
+  "iteration": 1,
+  "task_id": "multilingual-video-dubbing",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "multilingual-video-dubbing-entry-selector",
+    "multilingual-video-dubbing-scope-binder",
+    "multilingual-video-dubbing-authorized-continuation",
+    "multilingual-video-dubbing-scope-verifier",
+    "multilingual-video-dubbing-catalog-return-gate"
+  ],
+  "generated_skill_names": [
+    "multilingual-video-dubbing-workflow"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "multilingual-video-dubbing-workflow",
+      "objective": "Run the archived task-item selection, scoped mutation, and verification responsibilities in one current invocation."
+    }
+  ],
+  "expected_trace_markers": {
+    "multilingual-video-dubbing-workflow": []
+  },
+  "end_state_hypothesis": "preserves the archive task routes, scoped mutations, and scoped checks in one monolith. Carrier persistence, transition commands, cross-skill activation, and terminal re-entry are omitted; completed deliverables end normally.",
+  "native_target_file_paths": [
+    "/outputs/tts_segments/seg_0.wav",
+    "/outputs/dubbed.mp4",
+    "/outputs/report.json"
+  ],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "faithful_no_persistence_monolith",
+  "authority_promotion_contract": {}
+}

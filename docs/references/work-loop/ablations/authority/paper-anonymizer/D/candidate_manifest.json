@@ -1,0 +1,47 @@
+{
+  "run_id": "reference-c76fd5bdcaad",
+  "iteration": 1,
+  "task_id": "paper-anonymizer",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "academic-pdf-redaction",
+    "pdf"
+  ],
+  "generated_skill_names": [
+    "pdf"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "pdf",
+      "objective": "Use native task skills; one native skill contains an in-context per-action process with no cross-skill workflow state."
+    }
+  ],
+  "expected_trace_markers": {
+    "pdf": []
+  },
+  "end_state_hypothesis": "mounts only native task skills. Its terminal native skill makes the archive's selection, scope, action, check, and next-action process explicit for each task action, but creates no board, carrier, handoff, or proof-round return.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "direct_single_skill",
+  "authority_promotion_contract": {},
+  "native_skill_dependencies": {
+    "academic-pdf-redaction": "587dbb503749a037f1f51983a1c7bca4177f8f647be82b25e5751b5408a52a8c",
+    "pdf": "38d8559d4899602f82f3560052132aa0c40cfca80203037729756bdb4fb8e0cb"
+  },
+  "native_skill_extensions": {
+    "pdf": {
+      "path": "skills/pdf",
+      "base_sha256": "38d8559d4899602f82f3560052132aa0c40cfca80203037729756bdb4fb8e0cb",
+      "appendix_sha256": "339e6dd4bb71bf6c604b68b28d3af87d8e57ce17d45195200ff6205ed8fc89a7"
+    }
+  }
+}

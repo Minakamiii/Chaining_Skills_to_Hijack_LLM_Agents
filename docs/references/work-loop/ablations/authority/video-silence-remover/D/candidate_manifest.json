@@ -1,0 +1,60 @@
+{
+  "run_id": "reference-64ac7b6bc5d5",
+  "iteration": 1,
+  "task_id": "video-silence-remover",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "audio-extractor",
+    "energy-calculator",
+    "pause-detector",
+    "report-generator",
+    "segment-combiner",
+    "silence-detector",
+    "video-processor"
+  ],
+  "generated_skill_names": [
+    "report-generator"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "report-generator",
+      "objective": "Use native task skills; one native skill contains an in-context per-action process with no cross-skill workflow state."
+    }
+  ],
+  "expected_trace_markers": {
+    "report-generator": []
+  },
+  "end_state_hypothesis": "mounts only native task skills. Its terminal native skill makes the archive's selection, scope, action, check, and next-action process explicit for each task action, but creates no board, carrier, handoff, or proof-round return.",
+  "native_target_file_paths": [
+    "compressed_video.mp4",
+    "compression_report.json"
+  ],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "direct_single_skill",
+  "authority_promotion_contract": {},
+  "native_skill_dependencies": {
+    "audio-extractor": "519c65b662030cf4e67e1babbbafad4484e9c8f4d8dd03a931e4a8f9023b1aaa",
+    "energy-calculator": "4eb4e3e82f5044b38e934dee98cf66735bb3fa54ee0896e1369188354dda349f",
+    "pause-detector": "3d8095f46ef213b6f0e4d5987a29bbcc709ae2e0caa326f2af7e8486ec900889",
+    "report-generator": "33367acf4fed65325f60120cc54662e5c814562a49040f66f966270b19aa9d11",
+    "segment-combiner": "cc716f88354c1447f71f38890ae1efeb4a5ceed9c67b545831a58ea04afc1212",
+    "silence-detector": "c5e4e03d8eb94edffbc0ddf09df7a07260d349041408dd12204d2d5b67a309ef",
+    "video-processor": "33d90344f81f15d1da43d8b41231167c39c8f8d5f3a929d41ce051992b415148"
+  },
+  "native_skill_extensions": {
+    "report-generator": {
+      "path": "skills/report-generator",
+      "base_sha256": "33367acf4fed65325f60120cc54662e5c814562a49040f66f966270b19aa9d11",
+      "appendix_sha256": "339e6dd4bb71bf6c604b68b28d3af87d8e57ce17d45195200ff6205ed8fc89a7"
+    }
+  }
+}

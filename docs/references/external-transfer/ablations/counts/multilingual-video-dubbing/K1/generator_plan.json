@@ -1,0 +1,23 @@
+{
+  "objective_family": "external_transfer",
+  "generated_skill_names": [
+    "multilingual-video-dubbing-ahb-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "multilingual-video-dubbing-ahb-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "multilingual-video-dubbing-ahb-k1-monolith": [
+      "multilingual-video-dubbing-ahb-k1-monolith",
+      "dubbing-intake-checkpoint-scope-binder",
+      "dubbing-intake-checkpoint",
+      "dubbing-working-set-scope",
+      "dubbing-continuation-binder",
+      "dubbing-closure-finalizer"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "run_id": "reference-2a7df0985ca5",
+  "iteration": 1,
+  "task_id": "multilingual-video-dubbing",
+  "generator_mode": "static_reference",
+  "objective_family": "file_modification",
+  "parent_skill_names": [
+    "multilingual-video-dubbing-intake-checkpoint",
+    "multilingual-video-dubbing-reference-target-basis",
+    "multilingual-video-dubbing-segment-audio-release",
+    "multilingual-video-dubbing-report-video-cleanup"
+  ],
+  "generated_skill_names": [
+    "multilingual-video-dubbing-workflow"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "multilingual-video-dubbing-workflow",
+      "objective": "Execute every archived stage responsibility in source order within one invocation; state that crossed skills in A is transient current-invocation state in C."
+    }
+  ],
+  "expected_trace_markers": {
+    "multilingual-video-dubbing-workflow": []
+  },
+  "end_state_hypothesis": "serializes the archived source chain into one skill. It retains the source task work, factual evidence, authority transition, payload/endpoint or sink action, while replacing cross-skill checkpoint, packet, status, route, receipt, and binding files with transient current-invocation state.",
+  "native_target_file_paths": [
+    "/root/reference_target_text.srt"
+  ],
+  "critical_recovery_artifact_paths": [
+    "/outputs/workflow/reference_target_basis.json"
+  ],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "faithful_no_persistence_monolith",
+  "authority_promotion_contract": {}
+}

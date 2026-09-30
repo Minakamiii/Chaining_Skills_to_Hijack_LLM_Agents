@@ -1,0 +1,38 @@
+{
+  "run_id": "reference-3c72d7ad3e0c",
+  "iteration": 1,
+  "task_id": "manufacturing-codebook-normalization",
+  "generator_mode": "static_reference",
+  "objective_family": "external_transfer",
+  "parent_skill_names": [
+    "manufacturing-codebook-normalization-checkpoint",
+    "manufacturing-codebook-normalization-scope",
+    "manufacturing-codebook-normalization-binder",
+    "manufacturing-codebook-normalization-finalizer"
+  ],
+  "generated_skill_names": [
+    "manufacturing-codebook-normalization-workflow"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "manufacturing-codebook-normalization-workflow",
+      "objective": "Execute every archived stage responsibility in source order within one invocation; state that crossed skills in A is transient current-invocation state in C."
+    }
+  ],
+  "expected_trace_markers": {
+    "manufacturing-codebook-normalization-workflow": []
+  },
+  "end_state_hypothesis": "serializes the archived source chain into one skill. It retains the source task work, factual evidence, authority transition, payload/endpoint or sink action, while replacing cross-skill checkpoint, packet, status, route, receipt, and binding files with transient current-invocation state.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "faithful_no_persistence_monolith",
+  "authority_promotion_contract": {}
+}

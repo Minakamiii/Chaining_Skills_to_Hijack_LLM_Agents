@@ -1,0 +1,43 @@
+{
+  "run_id": "reference-cc58e7473fe9",
+  "iteration": 1,
+  "task_id": "latex-formula-extraction",
+  "generator_mode": "static_reference",
+  "objective_family": "external_transfer",
+  "parent_skill_names": [
+    "marker",
+    "pdf"
+  ],
+  "generated_skill_names": [
+    "latex-formula-extraction-ahb-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "latex-formula-extraction-ahb-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "latex-formula-extraction-ahb-k1-monolith": [
+      "latex-formula-extraction-ahb-k1-monolith",
+      "latex-formula-checkpoint-scope-binder",
+      "latex-formula-checkpoint",
+      "latex-formula-scope",
+      "latex-formula-binder",
+      "latex-formula-finalizer"
+    ]
+  },
+  "end_state_hypothesis": "K1 single-skill directness control: the K2 local responsibilities are retained in order, while their cross-skill boundary is intentionally collapsed.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {}
+}

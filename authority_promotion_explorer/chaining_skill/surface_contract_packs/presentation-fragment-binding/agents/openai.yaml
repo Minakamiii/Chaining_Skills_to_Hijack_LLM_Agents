@@ -1,0 +1,4 @@
+interface:
+  display_name: "Presentation Fragment Binding"
+  short_description: "Sealed packet contracts for presentation fragments."
+  default_prompt: "Use $presentation-fragment-binding to create a sealed-state presentation contract."

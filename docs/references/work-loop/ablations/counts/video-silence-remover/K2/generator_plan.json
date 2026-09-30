@@ -1,0 +1,63 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "video-silence-remover-rol-k2-stage1",
+    "video-silence-remover-rol-k2-stage2"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "video-silence-remover-rol-k2-stage1",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "video-silence-remover-rol-k2-stage2",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "video-silence-remover-rol-k2-stage1": [
+      "stage_id=video-silence-remover-rol-k2-stage1",
+      "record_generation=",
+      "validates_successor=video-silence-remover-rol-k2-stage2",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=video-silence-remover-rol-k2-stage2",
+      "board_path=workflow/video-silence-remover-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "video-silence-remover-rol-k2-stage2": [
+      "stage_id=video-silence-remover-rol-k2-stage2",
+      "record_generation=",
+      "validates_successor=video-silence-remover-rol-k2-stage1",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=video-silence-remover-rol-k2-stage1",
+      "board_path=workflow/video-silence-remover-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "board-and-slice-ring-v2",
+    "catalog_item_ids": [
+      "extracted-audio",
+      "energy-profile",
+      "segments-removed",
+      "compressed-video",
+      "compression-report"
+    ],
+    "ordered_stages": [
+      "video-silence-remover-rol-k2-stage1",
+      "video-silence-remover-rol-k2-stage2"
+    ],
+    "final_stage_return_stage": "video-silence-remover-rol-k2-stage1",
+    "return_target_stage": "video-silence-remover-rol-k2-stage1",
+    "shared_board_artifact": "workflow/video-silence-remover-board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

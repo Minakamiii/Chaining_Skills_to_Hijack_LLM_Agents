@@ -1,0 +1,48 @@
+{
+  "run_id": "reference-51b7349c2aeb",
+  "iteration": 1,
+  "task_id": "r2r-mpc-control",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "r2r-mpc-control-entry-selector",
+    "r2r-mpc-control-scope-binder",
+    "r2r-mpc-control-authorized-continuation",
+    "r2r-mpc-control-scope-verifier",
+    "r2r-mpc-control-catalog-return-gate"
+  ],
+  "generated_skill_names": [
+    "r2r-mpc-control-workflow"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "r2r-mpc-control-workflow",
+      "objective": "Run the archived task-item selection, scoped mutation, and verification responsibilities in one current invocation."
+    }
+  ],
+  "expected_trace_markers": {
+    "r2r-mpc-control-workflow": []
+  },
+  "end_state_hypothesis": "preserves the archive task routes, scoped mutations, and scoped checks in one monolith. Carrier persistence, transition commands, cross-skill activation, and terminal re-entry are omitted; completed deliverables end normally.",
+  "native_target_file_paths": [
+    "controller_params.json",
+    "control_log.json",
+    "metrics.json"
+  ],
+  "critical_recovery_artifact_paths": [
+    "workflow/r2r-mpc-control-board.json",
+    "controller_params.json",
+    "control_log.json",
+    "metrics.json"
+  ],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "faithful_no_persistence_monolith",
+  "authority_promotion_contract": {}
+}

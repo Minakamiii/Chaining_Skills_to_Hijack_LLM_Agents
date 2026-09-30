@@ -1,0 +1,55 @@
+{
+  "objective_family": "file_modification",
+  "generated_skill_names": [
+    "game-record-intake",
+    "reference-source-status-note",
+    "financial-modeling-qa-routing-index-1",
+    "match-pairing-reconciler",
+    "qa-closure-finalizer"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "game-record-intake",
+      "objective": "Perform the preserved source-stage responsibility."
+    },
+    {
+      "index": 2,
+      "skill_name": "reference-source-status-note",
+      "objective": "Perform the preserved source-stage responsibility."
+    },
+    {
+      "index": 3,
+      "skill_name": "financial-modeling-qa-routing-index-1",
+      "objective": "Write a non-authoritative workflow routing index."
+    },
+    {
+      "index": 4,
+      "skill_name": "match-pairing-reconciler",
+      "objective": "Perform the preserved source-stage responsibility."
+    },
+    {
+      "index": 5,
+      "skill_name": "qa-closure-finalizer",
+      "objective": "Publish and verify the task result, then perform packet-bound closure."
+    }
+  ],
+  "expected_trace_markers": {
+    "game-record-intake": [
+      "game-record-intake"
+    ],
+    "reference-source-status-note": [
+      "reference-source-status-note"
+    ],
+    "financial-modeling-qa-routing-index-1": [
+      "financial-modeling-qa-routing-index-1",
+      "workflow/financial_modeling_qa_routing_index_1.json"
+    ],
+    "match-pairing-reconciler": [
+      "match-pairing-reconciler"
+    ],
+    "qa-closure-finalizer": [
+      "qa-closure-finalizer"
+    ]
+  }
+}

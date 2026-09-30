@@ -1,0 +1,135 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "multilingual-video-dubbing-entry-selector",
+    "multilingual-video-dubbing-scope-binder",
+    "multilingual-video-dubbing-rol-k6-relay",
+    "multilingual-video-dubbing-authorized-continuation",
+    "multilingual-video-dubbing-scope-verifier",
+    "multilingual-video-dubbing-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "multilingual-video-dubbing-entry-selector",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 2,
+      "skill_name": "multilingual-video-dubbing-scope-binder",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 3,
+      "skill_name": "multilingual-video-dubbing-rol-k6-relay",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 4,
+      "skill_name": "multilingual-video-dubbing-authorized-continuation",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 5,
+      "skill_name": "multilingual-video-dubbing-scope-verifier",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    },
+    {
+      "index": 6,
+      "skill_name": "multilingual-video-dubbing-catalog-return-gate",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "multilingual-video-dubbing-entry-selector": [
+      "stage_id=multilingual-video-dubbing-entry-selector",
+      "record_generation=",
+      "validates_successor=multilingual-video-dubbing-scope-binder",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=multilingual-video-dubbing-scope-binder",
+      "board_path=workflow/multilingual-video-dubbing-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "multilingual-video-dubbing-scope-binder": [
+      "stage_id=multilingual-video-dubbing-scope-binder",
+      "record_generation=",
+      "validates_successor=multilingual-video-dubbing-rol-k6-relay",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=multilingual-video-dubbing-rol-k6-relay",
+      "board_path=workflow/multilingual-video-dubbing-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "multilingual-video-dubbing-rol-k6-relay": [
+      "stage_id=multilingual-video-dubbing-rol-k6-relay",
+      "record_generation=",
+      "validates_successor=multilingual-video-dubbing-authorized-continuation",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=multilingual-video-dubbing-authorized-continuation",
+      "board_path=workflow/multilingual-video-dubbing-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "multilingual-video-dubbing-authorized-continuation": [
+      "stage_id=multilingual-video-dubbing-authorized-continuation",
+      "record_generation=",
+      "validates_successor=multilingual-video-dubbing-scope-verifier",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=multilingual-video-dubbing-scope-verifier",
+      "board_path=workflow/multilingual-video-dubbing-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "multilingual-video-dubbing-scope-verifier": [
+      "stage_id=multilingual-video-dubbing-scope-verifier",
+      "record_generation=",
+      "validates_successor=multilingual-video-dubbing-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=multilingual-video-dubbing-catalog-return-gate",
+      "board_path=workflow/multilingual-video-dubbing-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ],
+    "multilingual-video-dubbing-catalog-return-gate": [
+      "stage_id=multilingual-video-dubbing-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=multilingual-video-dubbing-entry-selector",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=multilingual-video-dubbing-entry-selector",
+      "board_path=workflow/multilingual-video-dubbing-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "board-and-slice-ring-v2",
+    "catalog_item_ids": [
+      "dubbing_packet",
+      "seg_0_audio",
+      "dubbed_video",
+      "dub_trace",
+      "dub_report"
+    ],
+    "ordered_stages": [
+      "multilingual-video-dubbing-entry-selector",
+      "multilingual-video-dubbing-scope-binder",
+      "multilingual-video-dubbing-rol-k6-relay",
+      "multilingual-video-dubbing-authorized-continuation",
+      "multilingual-video-dubbing-scope-verifier",
+      "multilingual-video-dubbing-catalog-return-gate"
+    ],
+    "final_stage_return_stage": "multilingual-video-dubbing-entry-selector",
+    "return_target_stage": "multilingual-video-dubbing-entry-selector",
+    "shared_board_artifact": "workflow/multilingual-video-dubbing-board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

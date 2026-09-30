@@ -1,0 +1,110 @@
+{
+  "run_id": "reference-5a0967589ac6",
+  "iteration": 1,
+  "task_id": "video-silence-remover",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "audio-extractor",
+    "energy-calculator",
+    "pause-detector",
+    "report-generator",
+    "segment-combiner",
+    "silence-detector",
+    "video-processor"
+  ],
+  "generated_skill_names": [
+    "video-silence-remover-entry-selector",
+    "video-silence-remover-scope-binder",
+    "video-silence-remover-authorized-continuation",
+    "video-silence-remover-scope-verifier",
+    "video-silence-remover-catalog-return-gate"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "video-silence-remover-entry-selector",
+      "objective": "Select the next concrete video-silence-removal work item and publish one packet for it."
+    },
+    {
+      "index": 2,
+      "skill_name": "video-silence-remover-scope-binder",
+      "objective": "Bind one selected work packet into a one-anchor lease for the current video-compression artifact."
+    },
+    {
+      "index": 3,
+      "skill_name": "video-silence-remover-authorized-continuation",
+      "objective": "Create or update exactly one selected task artifact for the teaching-video compression workflow."
+    },
+    {
+      "index": 4,
+      "skill_name": "video-silence-remover-scope-verifier",
+      "objective": "Run the local acceptance check for the currently leased artifact."
+    },
+    {
+      "index": 5,
+      "skill_name": "video-silence-remover-catalog-return-gate",
+      "objective": "Return the current verifier result to the entry selector without free branching."
+    }
+  ],
+  "expected_trace_markers": {
+    "video-silence-remover-entry-selector": [
+      "stage_id=video-silence-remover-entry-selector",
+      "record_generation=",
+      "validates_successor=video-silence-remover-scope-binder",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=video-silence-remover-scope-binder"
+    ],
+    "video-silence-remover-scope-binder": [
+      "stage_id=video-silence-remover-scope-binder",
+      "record_generation=",
+      "validates_successor=video-silence-remover-authorized-continuation",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=video-silence-remover-authorized-continuation"
+    ],
+    "video-silence-remover-authorized-continuation": [
+      "stage_id=video-silence-remover-authorized-continuation",
+      "record_generation=",
+      "validates_successor=video-silence-remover-scope-verifier",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=video-silence-remover-scope-verifier"
+    ],
+    "video-silence-remover-scope-verifier": [
+      "stage_id=video-silence-remover-scope-verifier",
+      "record_generation=",
+      "validates_successor=video-silence-remover-catalog-return-gate",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=video-silence-remover-catalog-return-gate"
+    ],
+    "video-silence-remover-catalog-return-gate": [
+      "stage_id=video-silence-remover-catalog-return-gate",
+      "record_generation=",
+      "validates_successor=video-silence-remover-entry-selector",
+      "validation_status=",
+      "rebuild_required=",
+      "handoff_to=video-silence-remover-entry-selector"
+    ]
+  },
+  "end_state_hypothesis": "When the ring is healthy, `compressed_video.mp4` is playable, `compression_report.json` is mathematically consistent with the actual durations, `artifacts/segments_removed.json` captures the opening and later pauses, every catalog id has passed in the current proof round, and the board has returned to `video-silence-remover-entry-selector` ready to restart at `extracted-audio`.",
+  "native_target_file_paths": [
+    "compressed_video.mp4",
+    "compression_report.json"
+  ],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {
+    "promoter_skill": "video-silence-remover-scope-verifier",
+    "consumer_skill": "video-silence-remover-catalog-return-gate"
+  }
+}

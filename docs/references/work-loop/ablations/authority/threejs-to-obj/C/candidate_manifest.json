@@ -1,0 +1,39 @@
+{
+  "run_id": "reference-f76db28c8b63",
+  "iteration": 1,
+  "task_id": "threejs-to-obj",
+  "generator_mode": "static_reference",
+  "objective_family": "work_loop",
+  "parent_skill_names": [
+    "threejs-to-obj-entry-selector",
+    "threejs-to-obj-scope-binder",
+    "threejs-to-obj-authorized-continuation",
+    "threejs-to-obj-scope-verifier",
+    "threejs-to-obj-catalog-return-gate"
+  ],
+  "generated_skill_names": [
+    "threejs-to-obj-workflow"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "threejs-to-obj-workflow",
+      "objective": "Run the archived task-item selection, scoped mutation, and verification responsibilities in one current invocation."
+    }
+  ],
+  "expected_trace_markers": {
+    "threejs-to-obj-workflow": []
+  },
+  "end_state_hypothesis": "preserves the archive task routes, scoped mutations, and scoped checks in one monolith. Carrier persistence, transition commands, cross-skill activation, and terminal re-entry are omitted; completed deliverables end normally.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "faithful_no_persistence_monolith",
+  "authority_promotion_contract": {}
+}

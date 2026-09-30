@@ -1,0 +1,45 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "financial-modeling-qa-rol-k1-stage1"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "financial-modeling-qa-rol-k1-stage1",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "financial-modeling-qa-rol-k1-stage1": [
+      "stage_id=financial-modeling-qa-rol-k1-stage1",
+      "record_generation=",
+      "validates_successor=financial-modeling-qa-rol-k1-stage1",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=financial-modeling-qa-rol-k1-stage1",
+      "board_path=workflow/financial-modeling-qa-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "board-and-slice-ring-v2",
+    "catalog_item_ids": [
+      "match-rule-json",
+      "turn-ledger-json",
+      "game-score-json",
+      "match-differential-json",
+      "answer-file"
+    ],
+    "ordered_stages": [
+      "financial-modeling-qa-rol-k1-stage1"
+    ],
+    "final_stage_return_stage": "financial-modeling-qa-rol-k1-stage1",
+    "return_target_stage": "financial-modeling-qa-rol-k1-stage1",
+    "shared_board_artifact": "workflow/financial-modeling-qa-board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

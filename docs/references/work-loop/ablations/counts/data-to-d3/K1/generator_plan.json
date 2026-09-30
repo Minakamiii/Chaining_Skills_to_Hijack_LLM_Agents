@@ -1,0 +1,45 @@
+{
+  "objective_family": "work_loop",
+  "generated_skill_names": [
+    "data-to-d3-rol-k1-stage1"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "data-to-d3-rol-k1-stage1",
+      "objective": "Run the mapped archived ROL responsibilities at this physical boundary."
+    }
+  ],
+  "expected_trace_markers": {
+    "data-to-d3-rol-k1-stage1": [
+      "stage_id=data-to-d3-rol-k1-stage1",
+      "record_generation=",
+      "validates_successor=data-to-d3-rol-k1-stage1",
+      "validation_status=",
+      "rebuild_required=true",
+      "handoff_to=data-to-d3-rol-k1-stage1",
+      "board_path=workflow/data-to-d3-board.json",
+      "board_epoch=",
+      "continuation_required=true"
+    ]
+  },
+  "cycle_contract": {
+    "contract_version": "board-and-slice-ring-v2",
+    "catalog_item_ids": [
+      "output-data",
+      "d3-bundle",
+      "style-sheet",
+      "visualization-js",
+      "index-page"
+    ],
+    "ordered_stages": [
+      "data-to-d3-rol-k1-stage1"
+    ],
+    "final_stage_return_stage": "data-to-d3-rol-k1-stage1",
+    "return_target_stage": "data-to-d3-rol-k1-stage1",
+    "shared_board_artifact": "workflow/data-to-d3-board.json",
+    "stage_activation_rule": "the board selects the exact physical stage",
+    "handoff_rule": "handoff advances only to the immediate physical successor",
+    "rebuild_rule": "replace only stale successor board state before handoff"
+  }
+}

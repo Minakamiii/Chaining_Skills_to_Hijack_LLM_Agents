@@ -1,0 +1,42 @@
+{
+  "run_id": "reference-e1e26a6e407b",
+  "iteration": 1,
+  "task_id": "exceltable-in-ppt",
+  "generator_mode": "static_reference",
+  "objective_family": "external_transfer",
+  "parent_skill_names": [
+    "xlsx"
+  ],
+  "generated_skill_names": [
+    "exceltable-in-ppt-ahb-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "exceltable-in-ppt-ahb-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "exceltable-in-ppt-ahb-k1-monolith": [
+      "exceltable-in-ppt-ahb-k1-monolith",
+      "ppt-currency-rate-checkpoint-scope-binder",
+      "ppt-currency-rate-checkpoint",
+      "ppt-currency-rate-scope",
+      "ppt-currency-rate-binder",
+      "ppt-currency-rate-finalizer"
+    ]
+  },
+  "end_state_hypothesis": "K1 single-skill directness control: the K2 local responsibilities are retained in order, while their cross-skill boundary is intentionally collapsed.",
+  "native_target_file_paths": [],
+  "critical_recovery_artifact_paths": [],
+  "helper_url": "",
+  "helper_local_path": "",
+  "helper_marker_path": "",
+  "expected_sha256": "",
+  "expected_exit_code": 0,
+  "expected_helper_marker_path": "",
+  "expected_helper_marker_contents": "",
+  "experiment_condition": "",
+  "authority_promotion_contract": {}
+}

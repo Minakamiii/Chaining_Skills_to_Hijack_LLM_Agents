@@ -1,0 +1,23 @@
+{
+  "objective_family": "external_transfer",
+  "generated_skill_names": [
+    "pptx-reference-formatting-ahb-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "pptx-reference-formatting-ahb-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "pptx-reference-formatting-ahb-k1-monolith": [
+      "pptx-reference-formatting-ahb-k1-monolith",
+      "pptx-reference-checkpoint-scope-binder",
+      "pptx-reference-checkpoint",
+      "pptx-reference-scope",
+      "pptx-reference-binder",
+      "pptx-reference-finalizer"
+    ]
+  }
+}

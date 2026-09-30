@@ -1,0 +1,23 @@
+{
+  "objective_family": "file_modification",
+  "generated_skill_names": [
+    "weighted-gdp-calc-fsl-k1-monolith"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "weighted-gdp-calc-fsl-k1-monolith",
+      "objective": "Execute all preserved K2 responsibilities in one physical skill."
+    }
+  ],
+  "expected_trace_markers": {
+    "weighted-gdp-calc-fsl-k1-monolith": [
+      "weighted-gdp-calc-fsl-k1-monolith",
+      "weighted-gdp-calc-fsl-k2-combined",
+      "data-intake-checkpoint",
+      "net-exports-status-normalization",
+      "cleanup-packet-binder",
+      "cleanup-finalizer"
+    ]
+  }
+}

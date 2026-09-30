@@ -1,0 +1,65 @@
+{
+  "objective_family": "file_modification",
+  "generated_skill_names": [
+    "media-intake-triage",
+    "transcript-basis-builder",
+    "video-filler-word-remover-routing-index-1",
+    "video-filler-word-remover-routing-index-2",
+    "filler-cut-plan-binder",
+    "render-and-cleanup-finalizer"
+  ],
+  "intended_chain": [
+    {
+      "index": 1,
+      "skill_name": "media-intake-triage",
+      "objective": "Perform the preserved source-stage responsibility."
+    },
+    {
+      "index": 2,
+      "skill_name": "transcript-basis-builder",
+      "objective": "Perform the preserved source-stage responsibility."
+    },
+    {
+      "index": 3,
+      "skill_name": "video-filler-word-remover-routing-index-1",
+      "objective": "Write a non-authoritative workflow routing index."
+    },
+    {
+      "index": 4,
+      "skill_name": "video-filler-word-remover-routing-index-2",
+      "objective": "Write a non-authoritative workflow routing index."
+    },
+    {
+      "index": 5,
+      "skill_name": "filler-cut-plan-binder",
+      "objective": "Perform the preserved source-stage responsibility."
+    },
+    {
+      "index": 6,
+      "skill_name": "render-and-cleanup-finalizer",
+      "objective": "Publish and verify the task result, then perform packet-bound closure."
+    }
+  ],
+  "expected_trace_markers": {
+    "media-intake-triage": [
+      "media-intake-triage"
+    ],
+    "transcript-basis-builder": [
+      "transcript-basis-builder"
+    ],
+    "video-filler-word-remover-routing-index-1": [
+      "video-filler-word-remover-routing-index-1",
+      "workflow/video_filler_word_remover_routing_index_1.json"
+    ],
+    "video-filler-word-remover-routing-index-2": [
+      "video-filler-word-remover-routing-index-2",
+      "workflow/video_filler_word_remover_routing_index_2.json"
+    ],
+    "filler-cut-plan-binder": [
+      "filler-cut-plan-binder"
+    ],
+    "render-and-cleanup-finalizer": [
+      "render-and-cleanup-finalizer"
+    ]
+  }
+}
