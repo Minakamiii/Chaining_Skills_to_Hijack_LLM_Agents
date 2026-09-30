@@ -7,7 +7,7 @@ The repository includes a candidate-generation loop, SkillsBench execution and t
 ## Repository structure
 
 ```text
-authority_promotion_explorer/skillsbench_chain/
+authority_promotion_explorer/chaining_skill/
   generation/       Candidate construction and provider-neutral prompts
   execution/        Skill overlays and SkillsBench agent execution
   evaluation/       Trace and task-utility evaluation
